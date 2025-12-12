@@ -71,7 +71,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
     <>
       <div
         ref={overlayRef}
-        className="fixed inset-0 bg-black/80 z-40 opacity-0"
+        className="fixed inset-0 bg-background/80 z-40 opacity-0"
         onClick={onClose}
       />
       <div

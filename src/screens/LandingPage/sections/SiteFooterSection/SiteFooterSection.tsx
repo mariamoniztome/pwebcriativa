@@ -1,19 +1,4 @@
-import React from "react";
-
-const contactInfo = [
-  "email@email.com",
-  "MAD Jam Fest",
-  "Escola Superior de Media Artes e Design",
-  "Rua D.Sancho I",
-];
-
-const navigationLinks = ["Home", "Programa", "Open Calls", "Contacto"];
-
-const legalLinks = [
-  "Política de Privacidade",
-  "Termos de Utilização",
-  "Política de Cookies",
-];
+import { contactInfo, menuLinks, legalLinks } from "../../../../assets/data/links";
 
 export const SiteFooterSection = (): JSX.Element => {
   return (
@@ -32,7 +17,7 @@ export const SiteFooterSection = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col gap-3">
-            {navigationLinks.map((link, index) => (
+            {menuLinks.map((link, index) => (
               <a
                 key={index}
                 href="#"

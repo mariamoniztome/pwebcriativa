@@ -2,23 +2,9 @@ import { ChevronRightIcon } from "lucide-react";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { eventDays } from "../../../../assets/data/eventDay";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const eventDays = [
-  {
-    day: "DIA 1",
-    date: "25/02",
-  },
-  {
-    day: "DIA 2",
-    date: "25/02",
-  },
-  {
-    day: "DIA 3",
-    date: "25/02",
-  },
-];
 
 interface EventDaysSectionProps {
   onDayClick: (day: string, date: string) => void;
@@ -30,7 +16,7 @@ export const EventDaysSection: React.FC<EventDaysSectionProps> = ({
   const daysRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
-    daysRef.current.forEach((day, index) => {
+    daysRef.current.forEach((day) => {
       if (!day) return;
 
       gsap.fromTo(

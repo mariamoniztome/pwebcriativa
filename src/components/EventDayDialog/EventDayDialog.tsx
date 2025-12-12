@@ -68,7 +68,7 @@ export const EventDayDialog: React.FC<EventDayDialogProps> = ({
     <div ref={dialogRef} className="fixed inset-0 z-50 flex items-center justify-center">
       <div
         ref={overlayRef}
-        className="absolute inset-0 bg-black/90 opacity-0"
+        className="absolute inset-0 bg-background/90 opacity-0"
         onClick={handleClose}
       />
       <div
@@ -79,7 +79,7 @@ export const EventDayDialog: React.FC<EventDayDialogProps> = ({
           variant="ghost"
           size="icon"
           onClick={handleClose}
-          className="absolute top-4 right-4 w-[40px] h-[40px] p-0 hover:bg-muted hover:rotate-90 transition-all duration-300"
+          className="absolute top-4 right-4 w-10 h-10 p-0 hover:bg-muted hover:rotate-90 transition-all duration-300"
         >
           <X className="w-6 h-6 text-foreground" />
         </Button>
