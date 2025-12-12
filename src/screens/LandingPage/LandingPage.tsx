@@ -7,69 +7,7 @@ import { NavigationLinksSection } from "./sections/NavigationLinksSection/Naviga
 import { EventDaysSection } from "./sections/EventDaysSection/EventDaysSection";
 import { AnnouncementMarqueeSection } from "./sections/AnnouncementMarqueeSection/AnnouncementMarqueeSection";
 import { SiteFooterSection } from "./sections/SiteFooterSection/SiteFooterSection";
-
-const partnerLogos = [
-  {
-    src: "/img-7.png",
-    alt: "Partner Logo 1",
-    className: "row-[1_/_2] col-[1_/_2] justify-self-center self-center w-36 h-12",
-  },
-  {
-    src: "/img-6.png",
-    alt: "Partner Logo 2",
-    className: "row-[1_/_2] col-[2_/_3] justify-self-start self-end w-full h-16",
-  },
-  {
-    src: "/img.png",
-    alt: "Partner Logo 3",
-    className: "row-[1_/_2] col-[3_/_4] justify-self-start w-full h-16 object-cover",
-  },
-  {
-    src: "/img-1.png",
-    alt: "Partner Logo 4",
-    className: "row-[1_/_2] col-[4_/_5] justify-self-start w-full h-16 object-cover",
-  },
-  {
-    src: "/img-8.png",
-    alt: "Partner Logo 5",
-    className: "row-[1_/_2] col-[5_/_6] justify-self-center self-center w-36 h-12",
-  },
-  {
-    src: "/img-10.png",
-    alt: "Partner Logo 6",
-    className: "row-[1_/_2] col-[6_/_7] justify-self-start w-full h-16 object-cover",
-  },
-  {
-    src: "/img-2.png",
-    alt: "Partner Logo 7",
-    className: "row-[2_/_3] col-[1_/_2] justify-self-start w-full h-16 object-cover",
-  },
-  {
-    src: "/img-3.png",
-    alt: "Partner Logo 8",
-    className: "row-[2_/_3] col-[2_/_3] justify-self-start w-full h-16 object-cover",
-  },
-  {
-    src: "/img-4.png",
-    alt: "Partner Logo 9",
-    className: "row-[2_/_3] col-[3_/_4] justify-self-start w-full h-16 object-cover",
-  },
-  {
-    src: "/img-5.png",
-    alt: "Partner Logo 10",
-    className: "row-[2_/_3] col-[4_/_5] justify-self-start w-full h-16 object-cover",
-  },
-  {
-    src: "/img-9.png",
-    alt: "Partner Logo 11",
-    className: "row-[2_/_3] col-[5_/_6] justify-self-start w-full h-16 object-cover",
-  },
-  {
-    src: "/img-11.png",
-    alt: "Partner Logo 12",
-    className: "row-[2_/_3] col-[6_/_7] justify-self-start self-start w-56 h-20 object-cover",
-  },
-];
+import { partnerLogos } from "../../assets/data/partnersLogo";
 
 export const LandingPage = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

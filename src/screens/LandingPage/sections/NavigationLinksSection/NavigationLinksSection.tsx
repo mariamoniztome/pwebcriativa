@@ -1,17 +1,4 @@
-const navigationLinks = [
-  {
-    text: "PROGRAMA",
-    className: "font-montreal font-normal text-foreground",
-  },
-  {
-    text: "CONTACTO",
-    className: "font-montreal font-normal text-foreground",
-  },
-  {
-    text: "OPEN CALLS",
-    className: "font-montreal-italic font-normal italic text-primary",
-  },
-];
+import { navigationLinks } from "../../../../assets/data/links";
 
 export const NavigationLinksSection = (): JSX.Element => {
   return (

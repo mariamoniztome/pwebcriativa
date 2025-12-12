@@ -1,4 +1,4 @@
-export const partnersLogo = [
+export const partnerLogos = [
   {
     src: "/img-7.png",
     alt: "Partner Logo 1",

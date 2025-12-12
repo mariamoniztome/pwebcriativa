@@ -1,20 +1,5 @@
 import { ChevronRightIcon } from "lucide-react";
-import React from "react";
-
-const eventDays = [
-  {
-    day: "DIA 1",
-    date: "25/02",
-  },
-  {
-    day: "DIA 2",
-    date: "25/02",
-  },
-  {
-    day: "DIA 3",
-    date: "25/02",
-  },
-];
+import { eventDays } from "../../../../assets/data/eventDay";
 
 interface EventDaysSectionProps {
   onDayClick: (day: string, date: string) => void;
