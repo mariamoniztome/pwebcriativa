@@ -1,0 +1,1 @@
+export { AnnouncementMarqueeSection } from "./AnnouncementMarqueeSection";
