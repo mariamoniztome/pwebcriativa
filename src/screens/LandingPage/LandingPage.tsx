@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Menu, ChevronUp, ChevronDown } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { MobileMenu } from "../../components/MobileMenu/MobileMenu";
 import { EventDayDialog } from "../../components/EventDayDialog/EventDayDialog";
@@ -41,11 +42,7 @@ export const LandingPage = (): JSX.Element => {
             onClick={() => setIsMenuOpen(true)}
             className="absolute top-12 right-0 w-16 h-8 p-0 hover:bg-transparent hover:scale-110 transition-transform duration-300"
           >
-            <img
-              className="w-full h-full"
-              alt="Hamburger menu"
-              src="/hamburgermenu.svg"
-            />
+            <Menu className="w-8 h-8 text-foreground" />
           </Button>
 
           <img
@@ -60,7 +57,6 @@ export const LandingPage = (): JSX.Element => {
       <NavigationLinksSection />
       <EventDaysSection onDayClick={handleDayClick} />
 
-      {/* Image Section */}
       <section className="flex w-full justify-center py-20">
         <img
           className="w-full max-w-screen-xl h-auto object-cover"
@@ -92,19 +88,13 @@ export const LandingPage = (): JSX.Element => {
 
       <SiteFooterSection />
 
-      <img
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-screen-xl h-full pointer-events-none"
-        alt="Grain"
-        src="/grain.png"
-      />
-
       <Button
         variant="ghost"
         size="icon"
         onClick={scrollToTop}
         className="top-96 right-32 fixed w-20 h-20 p-0 hover:bg-transparent hover:scale-110 hover:-translate-y-2 transition-all duration-300"
       >
-        <img className="h-full w-full" alt="Scroll to top" src="/arrow-3.svg" />
+        <ChevronUp className="w-full h-full text-foreground" strokeWidth={1} />
       </Button>
 
       <Button
@@ -113,11 +103,7 @@ export const LandingPage = (): JSX.Element => {
         onClick={scrollToBottom}
         className="bottom-32 right-32 fixed w-20 h-20 p-0 hover:bg-transparent hover:scale-110 hover:translate-y-2 transition-all duration-300"
       >
-        <img
-          className="h-full w-full"
-          alt="Scroll to bottom"
-          src="/arrow-4.svg"
-        />
+        <ChevronDown className="w-full h-full text-foreground" strokeWidth={1} />
       </Button>
 
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

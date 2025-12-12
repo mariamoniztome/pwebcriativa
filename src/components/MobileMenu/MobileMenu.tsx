@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 import { Button } from "../ui/button";
 
 interface MobileMenuProps {
@@ -51,20 +52,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               onClick={onClose}
               className="w-12 h-12 p-0 hover:bg-transparent hover:rotate-90 transition-transform duration-300"
             >
-              <svg
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 2L28 28M28 2L2 28"
-                  stroke="white"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <X className="w-8 h-8 text-foreground" strokeWidth={2} />
             </Button>
           </div>
 
