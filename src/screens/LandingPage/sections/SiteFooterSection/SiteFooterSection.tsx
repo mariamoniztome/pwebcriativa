@@ -9,7 +9,7 @@ export const SiteFooterSection = (): JSX.Element => {
             {contactInfo.map((info, index) => (
               <div
                 key={index}
-                className="[font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-neutral-100 text-sm tracking-[0] leading-[22.4px]"
+                className="font-montreal-bold font-bold text-neutral-100 text-sm leading-relaxed"
               >
                 {info}
               </div>
@@ -21,7 +21,7 @@ export const SiteFooterSection = (): JSX.Element => {
               <a
                 key={index}
                 href="#"
-                className="[font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-neutral-100 text-base tracking-[0] leading-[0.1px] hover:opacity-80 transition-opacity"
+                className="font-montreal-bold font-bold text-neutral-100 text-base hover:opacity-80 transition-opacity"
               >
                 {link}
               </a>
@@ -30,7 +30,7 @@ export const SiteFooterSection = (): JSX.Element => {
 
           <div className="flex justify-end">
             <img
-              className="w-full max-w-[515px] h-[18px]"
+              className="w-full max-w-lg h-5"
               alt="Social media"
               src="/social-media.svg"
             />
@@ -42,7 +42,7 @@ export const SiteFooterSection = (): JSX.Element => {
             <a
               key={index}
               href="#"
-              className="[font-family:'Azeret_Mono',Helvetica] font-normal text-neutral-100 text-xs tracking-[0.60px] leading-[19.2px] whitespace-nowrap hover:opacity-80 transition-opacity"
+              className="font-sans font-normal text-neutral-100 text-xs tracking-wide leading-relaxed whitespace-nowrap hover:opacity-80 transition-opacity"
             >
               {link}
             </a>

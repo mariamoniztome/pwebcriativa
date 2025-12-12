@@ -1,63 +1,80 @@
-import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import React, { useState } from "react";
 import { Button } from "../../components/ui/button";
 import { MobileMenu } from "../../components/MobileMenu/MobileMenu";
 import { EventDayDialog } from "../../components/EventDayDialog/EventDayDialog";
-import { MainHeroSection } from "./sections/MainHeroSection/MainHeroSection";
-import { NavigationLinksSection } from "./sections/NavigationLinksSection/NavigationLinksSection";
-import { EventDaysSection } from "./sections/EventDaysSection/EventDaysSection";
-import { AnnouncementMarqueeSection } from "./sections/AnnouncementMarqueeSection/AnnouncementMarqueeSection";
-import { SiteFooterSection } from "./sections/SiteFooterSection/SiteFooterSection";
-import { partnersLogo } from "../../assets/data/partnersLogo";
-import { Menu } from "lucide-react";
+import { AnnouncementMarqueeSection } from "./sections/AnnouncementMarqueeSection";
+import { EventDaysSection } from "./sections/EventDaysSection";
+import { MainHeroSection } from "./sections/MainHeroSection";
+import { NavigationLinksSection } from "./sections/NavigationLinksSection";
+import { SiteFooterSection } from "./sections/SiteFooterSection";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+const partnerLogos = [
+  {
+    src: "/img-7.png",
+    alt: "Partner Logo 1",
+    className: "row-[1_/_2] col-[1_/_2] justify-self-center self-center w-36 h-12",
+  },
+  {
+    src: "/img-6.png",
+    alt: "Partner Logo 2",
+    className: "row-[1_/_2] col-[2_/_3] justify-self-start self-end w-full h-16",
+  },
+  {
+    src: "/img.png",
+    alt: "Partner Logo 3",
+    className: "row-[1_/_2] col-[3_/_4] justify-self-start w-full h-16 object-cover",
+  },
+  {
+    src: "/img-1.png",
+    alt: "Partner Logo 4",
+    className: "row-[1_/_2] col-[4_/_5] justify-self-start w-full h-16 object-cover",
+  },
+  {
+    src: "/img-8.png",
+    alt: "Partner Logo 5",
+    className: "row-[1_/_2] col-[5_/_6] justify-self-center self-center w-36 h-12",
+  },
+  {
+    src: "/img-10.png",
+    alt: "Partner Logo 6",
+    className: "row-[1_/_2] col-[6_/_7] justify-self-start w-full h-16 object-cover",
+  },
+  {
+    src: "/img-2.png",
+    alt: "Partner Logo 7",
+    className: "row-[2_/_3] col-[1_/_2] justify-self-start w-full h-16 object-cover",
+  },
+  {
+    src: "/img-3.png",
+    alt: "Partner Logo 8",
+    className: "row-[2_/_3] col-[2_/_3] justify-self-start w-full h-16 object-cover",
+  },
+  {
+    src: "/img-4.png",
+    alt: "Partner Logo 9",
+    className: "row-[2_/_3] col-[3_/_4] justify-self-start w-full h-16 object-cover",
+  },
+  {
+    src: "/img-5.png",
+    alt: "Partner Logo 10",
+    className: "row-[2_/_3] col-[4_/_5] justify-self-start w-full h-16 object-cover",
+  },
+  {
+    src: "/img-9.png",
+    alt: "Partner Logo 11",
+    className: "row-[2_/_3] col-[5_/_6] justify-self-start w-full h-16 object-cover",
+  },
+  {
+    src: "/img-11.png",
+    alt: "Partner Logo 12",
+    className: "row-[2_/_3] col-[6_/_7] justify-self-start self-start w-56 h-20 object-cover",
+  },
+];
 
 export const LandingPage = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState({ day: "", date: "" });
-
-  const partnersRef = useRef<HTMLElement>(null);
-  const logoRefs = useRef<HTMLImageElement[]>([]);
-
-  useEffect(() => {
-    logoRefs.current.forEach((logo) => {
-      if (!logo) return;
-
-      gsap.fromTo(
-        logo,
-        { scale: 0.8, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 0.6,
-          scrollTrigger: {
-            trigger: logo,
-            start: "top 90%",
-            end: "top 70%",
-            scrub: 1,
-          },
-        }
-      );
-
-      const onEnter = () =>
-        gsap.to(logo, { scale: 1.1, duration: 0.3, ease: "back.out(1.7)" });
-
-      const onLeave = () =>
-        gsap.to(logo, { scale: 1, duration: 0.3, ease: "power2.out" });
-
-      logo.addEventListener("mouseenter", onEnter);
-      logo.addEventListener("mouseleave", onLeave);
-
-      return () => {
-        logo.removeEventListener("mouseenter", onEnter);
-        logo.removeEventListener("mouseleave", onLeave);
-      };
-    });
-  }, []);
 
   const handleDayClick = (day: string, date: string) => {
     setSelectedDay({ day, date });
@@ -65,38 +82,40 @@ export const LandingPage = (): JSX.Element => {
   };
 
   const scrollToTop = () => {
-    gsap.to(window, {
-      scrollTo: { y: 0 },
-      duration: 1.5,
-      ease: "power3.inOut",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const scrollToBottom = () => {
-    gsap.to(window, {
-      scrollTo: { y: document.body.scrollHeight },
-      duration: 1.5,
-      ease: "power3.inOut",
-    });
+    window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
   };
 
   return (
-    <div className="relative w-full overflow-x-hidden bg-background">
-      <header className="mx-auto flex h-36 max-w-screen-xl items-center justify-between bg-background px-4">
-        <img className="h-36 w-auto" alt="Logo" src="/logo.png" />
-
-        <div className="text-3xl font-normal text-foreground">
-          23–27 de fevereiro
+    <div className="bg-background overflow-x-hidden w-full min-w-screen-xl relative">
+      <header className="flex max-w-full w-screen-xl h-32 items-end justify-center px-3 pt-28 pb-3 relative bg-background">
+        <div className="relative flex items-center justify-center w-64 h-32 font-montreal font-normal text-foreground text-3xl tracking-normal leading-relaxed whitespace-nowrap">
+          23-27 de fevereiro
         </div>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setIsMenuOpen(true)}
-          // className="h-36 w-auto transition-transform hover:scale-110 hover:bg-transparent"
-        >
-          <Menu size={100} className="text-xl h-96 w-96 text-foreground" />
-        </Button>
+        <div className="absolute top-px left-0 w-full h-32">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMenuOpen(true)}
+            className="absolute top-12 right-0 w-16 h-8 p-0 hover:bg-transparent hover:scale-110 transition-transform duration-300"
+          >
+            <img
+              className="w-full h-full"
+              alt="Hamburger menu"
+              src="/hamburgermenu.svg"
+            />
+          </Button>
+
+          <img
+            className="absolute top-0 left-0 w-32 h-32 object-cover"
+            alt="Logo"
+            src="/logo.png"
+          />
+        </div>
       </header>
 
       <MainHeroSection />
@@ -106,7 +125,7 @@ export const LandingPage = (): JSX.Element => {
       {/* Image Section */}
       <section className="flex w-full justify-center py-20">
         <img
-          className="w-full max-w-screen-xl object-cover"
+          className="w-full max-w-screen-xl h-auto object-cover"
           alt="Event Space"
           src="/img-12.png"
         />
@@ -114,21 +133,17 @@ export const LandingPage = (): JSX.Element => {
 
       <AnnouncementMarqueeSection />
 
-      {/* Partners */}
-      <section ref={partnersRef} id="contacto" className="w-full py-20">
-        <div className="mx-auto flex max-w-screen-xl flex-col gap-6 px-4">
-          <h2 className="text-center text-2xl font-medium text-foreground">
-            Parceiros &amp; Patrocínios
+      <section id="contacto" className="relative w-full py-20">
+        <div className="w-screen-xl mx-auto flex flex-col gap-3">
+          <h2 className="flex items-center justify-center ml-10 w-72 h-8 font-montreal-medium font-medium text-foreground text-h3 whitespace-nowrap">
+            Parceiros &amp; Patrocinios
           </h2>
 
-          <div className="grid grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3 md:grid-cols-6">
-            {partnersLogo.map((logo, index) => (
+          <div className="grid w-screen-xl h-40 relative grid-cols-6 grid-rows-2 gap-6 bg-background">
+            {partnerLogos.map((logo, index) => (
               <img
                 key={index}
-                ref={(el) => {
-                  if (el) logoRefs.current[index] = el;
-                }}
-                className={`cursor-pointer ${logo.className}`}
+                className={`relative cursor-pointer hover:scale-110 transition-transform duration-300 ${logo.className}`}
                 alt={logo.alt}
                 src={logo.src}
               />
@@ -139,12 +154,17 @@ export const LandingPage = (): JSX.Element => {
 
       <SiteFooterSection />
 
-      {/* Floating buttons */}
+      <img
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-screen-xl h-full pointer-events-none"
+        alt="Grain"
+        src="/grain.png"
+      />
+
       <Button
         variant="ghost"
         size="icon"
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 z-50 h-20 w-20 p-0 transition-all duration-300 hover:-translate-y-2 hover:scale-110 hover:bg-transparent"
+        className="top-96 right-32 fixed w-20 h-20 p-0 hover:bg-transparent hover:scale-110 hover:-translate-y-2 transition-all duration-300"
       >
         <img className="h-full w-full" alt="Scroll to top" src="/arrow-3.svg" />
       </Button>
@@ -153,7 +173,7 @@ export const LandingPage = (): JSX.Element => {
         variant="ghost"
         size="icon"
         onClick={scrollToBottom}
-        className="fixed bottom-8 right-32 z-50 h-20 w-20 p-0 transition-all duration-300 hover:translate-y-2 hover:scale-110 hover:bg-transparent"
+        className="bottom-32 right-32 fixed w-20 h-20 p-0 hover:bg-transparent hover:scale-110 hover:translate-y-2 transition-all duration-300"
       >
         <img
           className="h-full w-full"

@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import React, { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { X } from "lucide-react";
 
@@ -16,107 +15,73 @@ export const EventDayDialog: React.FC<EventDayDialogProps> = ({
   day,
   date,
 }) => {
-  const dialogRef = useRef<HTMLDivElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!dialogRef.current || !overlayRef.current || !contentRef.current)
-      return;
-
     if (isOpen) {
-      gsap.to(overlayRef.current, {
-        opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-
-      gsap.fromTo(
-        contentRef.current,
-        { scale: 0.8, opacity: 0 },
-        {
-          scale: 1,
-          opacity: 1,
-          duration: 0.4,
-          ease: "back.out(1.7)",
-        }
-      );
+      setTimeout(() => setIsVisible(true), 10);
+    } else {
+      setIsVisible(false);
     }
   }, [isOpen]);
-
-  const handleClose = () => {
-    if (!contentRef.current || !overlayRef.current) return;
-
-    gsap.to(contentRef.current, {
-      scale: 0.8,
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.in",
-    });
-
-    gsap.to(overlayRef.current, {
-      opacity: 0,
-      duration: 0.3,
-      ease: "power2.in",
-      onComplete: onClose,
-    });
-  };
 
   if (!isOpen) return null;
 
   return (
-    <div ref={dialogRef} className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
-        ref={overlayRef}
-        className="absolute inset-0 bg-background/90 opacity-0"
-        onClick={handleClose}
+        className={`absolute inset-0 bg-black/90 transition-opacity duration-300 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
+        onClick={onClose}
       />
       <div
-        ref={contentRef}
-        className="relative bg-card border-2 border-border rounded-lg p-10 max-w-[800px] w-[90%] opacity-0 shadow-lg"
+        className={`relative bg-card border-2 border-border rounded-lg p-10 max-w-3xl w-11/12 shadow-lg transition-all duration-400 ${
+          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}
       >
         <Button
           variant="ghost"
           size="icon"
-          onClick={handleClose}
+          onClick={onClose}
           className="absolute top-4 right-4 w-10 h-10 p-0 hover:bg-muted hover:rotate-90 transition-all duration-300"
         >
           <X className="w-6 h-6 text-foreground" />
         </Button>
 
         <div className="mb-8">
-          <h2 className="[font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-foreground text-[80px] leading-tight">
+          <h2 className="font-montreal-bold font-bold text-foreground text-8xl leading-tight">
             {day}
           </h2>
-          <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-primary text-[40px] mt-2">
+          <p className="font-montreal text-primary text-4xl mt-2">
             {date}
           </p>
         </div>
 
         <div className="space-y-6">
           <div className="border-l-4 border-primary pl-6">
-            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-foreground text-h3 mb-2">
+            <h3 className="font-montreal-medium text-foreground text-h3 mb-2">
               10:00 - 12:00
             </h3>
-            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-muted-foreground text-body">
+            <p className="font-montreal text-muted-foreground text-body">
               Workshop de produção musical
             </p>
           </div>
 
           <div className="border-l-4 border-primary pl-6">
-            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-foreground text-h3 mb-2">
+            <h3 className="font-montreal-medium text-foreground text-h3 mb-2">
               14:00 - 16:00
             </h3>
-            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-muted-foreground text-body">
+            <p className="font-montreal text-muted-foreground text-body">
               Painel: O futuro da música independente
             </p>
           </div>
 
           <div className="border-l-4 border-primary pl-6">
-            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-foreground text-h3 mb-2">
+            <h3 className="font-montreal-medium text-foreground text-h3 mb-2">
               20:00 - 23:00
             </h3>
-            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-muted-foreground text-body">
+            <p className="font-montreal text-muted-foreground text-body">
               Concertos ao vivo
             </p>
           </div>

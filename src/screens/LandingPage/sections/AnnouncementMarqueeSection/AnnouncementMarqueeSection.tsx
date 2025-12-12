@@ -4,19 +4,19 @@ const marqueeItems = Array(15).fill({
 
 export const AnnouncementMarqueeSection = (): JSX.Element => {
   return (
-    <section className="w-full flex flex-col gap-4">
-      <div className="w-full flex items-center bg-primary overflow-hidden py-12">
-        <div className="flex h-10 items-start gap-6 animate-marquee whitespace-nowrap">
+    <section className="w-full flex flex-col gap-1">
+      <div className="w-full flex items-center bg-[#fa5302] overflow-hidden py-12">
+        <div className="flex h-10 items-start gap-10 animate-marquee whitespace-nowrap">
           {marqueeItems.map((item, index) => (
             <div
               key={`marquee-1-${index}`}
-              className="flex w-[307px] items-center justify-center gap-2.5 flex-shrink-0"
+              className="flex w-80 items-center justify-center gap-2.5 flex-shrink-0"
             >
-              <div className="flex-1 [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-background text-xl tracking-[1.50px] leading-5">
+              <div className="flex-1 font-montreal-bold font-bold text-[#101010] text-xl tracking-wider leading-5">
                 {item.text}
               </div>
               <img
-                className="w-[10.01px] h-2.5"
+                className="w-2.5 h-2.5"
                 alt="Vector"
                 src="/vector.svg"
               />
@@ -25,13 +25,13 @@ export const AnnouncementMarqueeSection = (): JSX.Element => {
           {marqueeItems.map((item, index) => (
             <div
               key={`marquee-1-duplicate-${index}`}
-              className="flex w-[307px] items-center justify-center gap-2.5 flex-shrink-0"
+              className="flex w-80 items-center justify-center gap-2.5 flex-shrink-0"
             >
-              <div className="flex-1 [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-background text-xl tracking-[1.50px] leading-5">
+              <div className="flex-1 font-montreal-bold font-bold text-[#101010] text-xl tracking-wider leading-5">
                 {item.text}
               </div>
               <img
-                className="w-[10.01px] h-2.5"
+                className="w-2.5 h-2.5"
                 alt="Vector"
                 src="/vector.svg"
               />
@@ -40,18 +40,18 @@ export const AnnouncementMarqueeSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="w-full flex items-center bg-secondary overflow-hidden py-12 rotate-[3.48deg]">
-        <div className="flex h-10 items-start gap-6 animate-marquee whitespace-nowrap">
+      <div className="w-full flex items-center bg-[#febf01] overflow-hidden py-12 rotate-[3.48deg]">
+        <div className="flex h-10 items-start gap-10 animate-marquee whitespace-nowrap">
           {marqueeItems.map((item, index) => (
             <div
               key={`marquee-2-${index}`}
-              className="flex w-[307px] items-center justify-center gap-2.5 flex-shrink-0"
+              className="flex w-80 items-center justify-center gap-2.5 flex-shrink-0"
             >
-              <div className="flex-1 [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-background text-xl tracking-[1.50px] leading-5">
+              <div className="flex-1 font-montreal-bold font-bold text-[#101010] text-xl tracking-wider leading-5">
                 {item.text}
               </div>
               <img
-                className="w-[10.24px] h-[10.6px] rotate-[-3.48deg]"
+                className="w-2.5 h-2.5 rotate-[-3.48deg]"
                 alt="Vector"
                 src="/vector-3.svg"
               />
@@ -60,13 +60,13 @@ export const AnnouncementMarqueeSection = (): JSX.Element => {
           {marqueeItems.map((item, index) => (
             <div
               key={`marquee-2-duplicate-${index}`}
-              className="flex w-[307px] items-center justify-center gap-2.5 flex-shrink-0"
+              className="flex w-80 items-center justify-center gap-2.5 flex-shrink-0"
             >
-              <div className="flex-1 [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-background text-xl tracking-[1.50px] leading-5">
+              <div className="flex-1 font-montreal-bold font-bold text-[#101010] text-xl tracking-wider leading-5">
                 {item.text}
               </div>
               <img
-                className="w-[10.24px] h-[10.6px] rotate-[-3.48deg]"
+                className="w-2.5 h-2.5 rotate-[-3.48deg]"
                 alt="Vector"
                 src="/vector-3.svg"
               />
