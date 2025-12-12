@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import React, { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 
 interface MobileMenuProps {
@@ -14,54 +13,13 @@ const menuItems = [
 ];
 
 export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
-  const menuRef = useRef<HTMLDivElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const itemsRef = useRef<HTMLDivElement[]>([]);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!menuRef.current || !overlayRef.current) return;
-
     if (isOpen) {
-      gsap.to(overlayRef.current, {
-        opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-
-      gsap.fromTo(
-        menuRef.current,
-        { x: "100%" },
-        {
-          x: "0%",
-          duration: 0.5,
-          ease: "power3.out",
-        }
-      );
-
-      gsap.fromTo(
-        itemsRef.current,
-        { x: 50, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.4,
-          stagger: 0.1,
-          delay: 0.3,
-          ease: "power2.out",
-        }
-      );
+      setTimeout(() => setIsVisible(true), 10);
     } else {
-      gsap.to(overlayRef.current, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in",
-      });
-
-      gsap.to(menuRef.current, {
-        x: "100%",
-        duration: 0.4,
-        ease: "power3.in",
-      });
+      setIsVisible(false);
     }
   }, [isOpen]);
 
@@ -70,18 +28,20 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   return (
     <>
       <div
-        ref={overlayRef}
-        className="fixed inset-0 bg-black/80 z-40 opacity-0"
+        className={`fixed inset-0 bg-black/80 z-40 transition-opacity duration-300 ${
+          isVisible ? "opacity-100" : "opacity-0"
+        }`}
         onClick={onClose}
       />
       <div
-        ref={menuRef}
-        className="fixed top-0 right-0 h-full w-full max-w-[600px] bg-background border-l border-border z-50 shadow-lg translate-x-full"
+        className={`fixed top-0 right-0 h-full w-full max-w-xl bg-background border-l border-border z-50 shadow-lg transition-transform duration-500 ${
+          isVisible ? "translate-x-0" : "translate-x-full"
+        }`}
       >
         <div className="flex flex-col h-full p-10">
           <div className="flex justify-between items-center mb-20">
             <img
-              className="w-[100px] h-[100px] object-cover"
+              className="w-24 h-24 object-cover"
               alt="Logo"
               src="/logo.png"
             />
@@ -89,7 +49,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
               variant="ghost"
               size="icon"
               onClick={onClose}
-              className="w-[50px] h-[50px] p-0 hover:bg-transparent hover:rotate-90 transition-transform duration-300"
+              className="w-12 h-12 p-0 hover:bg-transparent hover:rotate-90 transition-transform duration-300"
             >
               <svg
                 width="30"
@@ -112,10 +72,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
             {menuItems.map((item, index) => (
               <div
                 key={index}
-                ref={(el) => {
-                  if (el) itemsRef.current[index] = el;
-                }}
-                className="opacity-0"
+                className={`transition-all duration-400 ${
+                  isVisible
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-12"
+                }`}
+                style={{ transitionDelay: isVisible ? `${(index + 1) * 100}ms` : "0ms" }}
               >
                 <a
                   href={item.href}
@@ -126,10 +88,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                       behavior: "smooth",
                     });
                   }}
-                  className={`block text-[60px] leading-[1.2] transition-all duration-300 ${
+                  className={`block text-6xl leading-tight transition-all duration-300 ${
                     item.isHighlight
-                      ? "[font-family:'Neue_Montreal-Italic',Helvetica] italic text-primary hover:brightness-110"
-                      : "[font-family:'Neue_Montreal-Regular',Helvetica] text-foreground hover:text-muted-foreground"
+                      ? "font-montreal-italic italic text-primary hover:brightness-110"
+                      : "font-montreal text-foreground hover:text-muted-foreground"
                   }`}
                 >
                   {item.text}
@@ -139,7 +101,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </nav>
 
           <div className="mt-auto">
-            <p className="text-muted-foreground text-body-small [font-family:'Neue_Montreal-Regular',Helvetica]">
+            <p className="text-muted-foreground text-body-small font-montreal">
               23-27 de fevereiro
             </p>
           </div>
