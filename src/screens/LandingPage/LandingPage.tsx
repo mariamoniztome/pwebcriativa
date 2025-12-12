@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "../../components/ui/button";
 import { MobileMenu } from "../../components/MobileMenu/MobileMenu";
 import { EventDayDialog } from "../../components/EventDayDialog/EventDayDialog";
-import { AnnouncementMarqueeSection } from "./sections/AnnouncementMarqueeSection";
-import { EventDaysSection } from "./sections/EventDaysSection";
-import { MainHeroSection } from "./sections/MainHeroSection";
-import { NavigationLinksSection } from "./sections/NavigationLinksSection";
-import { SiteFooterSection } from "./sections/SiteFooterSection";
+import { MainHeroSection } from "./sections/MainHeroSection/MainHeroSection";
+import { NavigationLinksSection } from "./sections/NavigationLinksSection/NavigationLinksSection";
+import { EventDaysSection } from "./sections/EventDaysSection/EventDaysSection";
+import { AnnouncementMarqueeSection } from "./sections/AnnouncementMarqueeSection/AnnouncementMarqueeSection";
+import { SiteFooterSection } from "./sections/SiteFooterSection/SiteFooterSection";
 
 const partnerLogos = [
   {
