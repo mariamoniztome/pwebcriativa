@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const navigationLinks = [
   {
@@ -19,8 +23,55 @@ const navigationLinks = [
 ];
 
 export const NavigationLinksSection = (): JSX.Element => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const linksRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    if (sectionRef.current && linksRef.current.length > 0) {
+      linksRef.current.forEach((link, index) => {
+        if (!link) return;
+
+        gsap.fromTo(
+          link,
+          { x: index % 2 === 0 ? -100 : 100, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+              trigger: link,
+              start: "top 80%",
+              end: "top 50%",
+              scrub: 1,
+            },
+          }
+        );
+
+        link.addEventListener("mouseenter", () => {
+          gsap.to(link.querySelector("button"), {
+            scale: 1.05,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+
+        link.addEventListener("mouseleave", () => {
+          gsap.to(link.querySelector("button"), {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
+    }
+  }, []);
+
   return (
-    <section className="relative w-full flex flex-col items-center">
+    <section
+      ref={sectionRef}
+      id="programa"
+      className="relative w-full flex flex-col items-center"
+    >
       <div className="relative w-full max-w-[1435px] h-[1048px]">
         <div className="relative w-full h-full">
           <img
@@ -35,12 +86,15 @@ export const NavigationLinksSection = (): JSX.Element => {
           {navigationLinks.map((link, index) => (
             <div
               key={index}
+              ref={(el) => {
+                if (el) linksRef.current[index] = el;
+              }}
               className={`relative w-full max-w-[1440px] h-40 flex items-center justify-center ${
                 index > 0 ? "mt-[-22.1px]" : ""
               }`}
             >
               <button
-                className={`${link.className} text-[130px] tracking-[0] leading-[160px] hover:opacity-80 transition-opacity cursor-pointer`}
+                className={`${link.className} text-[130px] tracking-[0] leading-[160px] cursor-pointer`}
               >
                 {link.text}
               </button>

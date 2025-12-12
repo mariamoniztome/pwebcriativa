@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Button } from "../../components/ui/button";
+import { MobileMenu } from "../../components/MobileMenu";
+import { EventDayDialog } from "../../components/EventDayDialog";
 import { AnnouncementMarqueeSection } from "./sections/AnnouncementMarqueeSection";
 import { EventDaysSection } from "./sections/EventDaysSection";
 import { MainHeroSection } from "./sections/MainHeroSection";
 import { NavigationLinksSection } from "./sections/NavigationLinksSection";
 import { SiteFooterSection } from "./sections/SiteFooterSection";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const partnerLogos = [
   {
@@ -82,6 +89,73 @@ const partnerLogos = [
 ];
 
 export const LandingPage = (): JSX.Element => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedDay, setSelectedDay] = useState({ day: "", date: "" });
+  const partnersRef = useRef<HTMLElement>(null);
+  const logoRefs = useRef<HTMLImageElement[]>([]);
+
+  useEffect(() => {
+    if (partnersRef.current && logoRefs.current.length > 0) {
+      logoRefs.current.forEach((logo, index) => {
+        if (!logo) return;
+
+        gsap.fromTo(
+          logo,
+          { scale: 0.8, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            scrollTrigger: {
+              trigger: logo,
+              start: "top 90%",
+              end: "top 70%",
+              scrub: 1,
+            },
+          }
+        );
+
+        logo.addEventListener("mouseenter", () => {
+          gsap.to(logo, {
+            scale: 1.1,
+            duration: 0.3,
+            ease: "back.out(1.7)",
+          });
+        });
+
+        logo.addEventListener("mouseleave", () => {
+          gsap.to(logo, {
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
+    }
+  }, []);
+
+  const handleDayClick = (day: string, date: string) => {
+    setSelectedDay({ day, date });
+    setIsDialogOpen(true);
+  };
+
+  const scrollToTop = () => {
+    gsap.to(window, {
+      scrollTo: { y: 0 },
+      duration: 1.5,
+      ease: "power3.inOut",
+    });
+  };
+
+  const scrollToBottom = () => {
+    gsap.to(window, {
+      scrollTo: { y: document.body.scrollHeight },
+      duration: 1.5,
+      ease: "power3.inOut",
+    });
+  };
+
   return (
     <div className="bg-[#101010] overflow-x-hidden w-full min-w-[1440px] relative">
       <header className="flex max-w-[99999px] w-[1440px] max-h-[99999px] h-[136px] items-end justify-center pl-[11.02px] pr-[12.01px] pt-[115.2px] pb-[11.51px] relative bg-[#101010]">
@@ -93,7 +167,8 @@ export const LandingPage = (): JSX.Element => {
           <Button
             variant="ghost"
             size="icon"
-            className="absolute h-[22.22%] top-[39.26%] right-0 w-[62px] p-0 hover:bg-transparent"
+            onClick={() => setIsMenuOpen(true)}
+            className="absolute h-[22.22%] top-[39.26%] right-0 w-[62px] p-0 hover:bg-transparent hover:scale-110 transition-transform duration-300"
           >
             <img
               className="w-full h-full"
@@ -114,7 +189,7 @@ export const LandingPage = (): JSX.Element => {
 
       <NavigationLinksSection />
 
-      <EventDaysSection />
+      <EventDaysSection onDayClick={handleDayClick} />
 
       <section className="relative w-full flex justify-center py-20">
         <img
@@ -126,7 +201,11 @@ export const LandingPage = (): JSX.Element => {
 
       <AnnouncementMarqueeSection />
 
-      <section className="relative w-full py-20">
+      <section
+        ref={partnersRef}
+        id="contacto"
+        className="relative w-full py-20"
+      >
         <div className="w-[1440px] mx-auto flex flex-col gap-3">
           <h2 className="flex items-center justify-center ml-[38px] w-[276px] h-[29px] -mt-1 [font-family:'Neue_Montreal-Medium',Helvetica] font-medium text-neutral-100 text-xl tracking-[0] leading-10 whitespace-nowrap">
             Parceiros &amp; Patrocinios
@@ -136,7 +215,10 @@ export const LandingPage = (): JSX.Element => {
             {partnerLogos.map((logo, index) => (
               <img
                 key={index}
-                className={`relative ${logo.className}`}
+                ref={(el) => {
+                  if (el) logoRefs.current[index] = el;
+                }}
+                className={`relative cursor-pointer ${logo.className}`}
                 alt={logo.alt}
                 src={logo.src}
               />
@@ -156,7 +238,8 @@ export const LandingPage = (): JSX.Element => {
       <Button
         variant="ghost"
         size="icon"
-        className="top-[760px] left-[1313px] fixed w-[90px] h-[90px] p-0 hover:bg-transparent"
+        onClick={scrollToTop}
+        className="top-[760px] left-[1313px] fixed w-[90px] h-[90px] p-0 hover:bg-transparent hover:scale-110 hover:-translate-y-2 transition-all duration-300"
       >
         <img className="w-full h-full" alt="Scroll to top" src="/arrow-3.svg" />
       </Button>
@@ -164,7 +247,8 @@ export const LandingPage = (): JSX.Element => {
       <Button
         variant="ghost"
         size="icon"
-        className="top-[5776px] left-[1301px] fixed w-[90px] h-[90px] p-0 hover:bg-transparent"
+        onClick={scrollToBottom}
+        className="top-[5776px] left-[1301px] fixed w-[90px] h-[90px] p-0 hover:bg-transparent hover:scale-110 hover:translate-y-2 transition-all duration-300"
       >
         <img
           className="w-full h-full"
@@ -172,6 +256,14 @@ export const LandingPage = (): JSX.Element => {
           src="/arrow-4.svg"
         />
       </Button>
+
+      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <EventDayDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        day={selectedDay.day}
+        date={selectedDay.date}
+      />
     </div>
   );
 };

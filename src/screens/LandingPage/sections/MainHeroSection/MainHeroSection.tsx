@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const circularTextLetters = [
   {
@@ -375,17 +379,77 @@ const circularTextLetters = [
 ];
 
 export const MainHeroSection = (): JSX.Element => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const videoRef = useRef<HTMLDivElement>(null);
+  const badgeRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (titleRef.current) {
+      gsap.fromTo(
+        titleRef.current,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.2,
+          ease: "power3.out",
+        }
+      );
+    }
+
+    if (videoRef.current) {
+      gsap.fromTo(
+        videoRef.current,
+        { scale: 1.2, opacity: 0 },
+        {
+          scale: 1,
+          opacity: 1,
+          duration: 1.5,
+          delay: 0.3,
+          ease: "power2.out",
+        }
+      );
+    }
+
+    if (badgeRef.current) {
+      gsap.fromTo(
+        badgeRef.current,
+        { scale: 0, rotate: -180 },
+        {
+          scale: 1,
+          rotate: 0,
+          duration: 1,
+          delay: 0.8,
+          ease: "back.out(1.7)",
+        }
+      );
+
+      gsap.to(badgeRef.current, {
+        rotate: 360,
+        duration: 20,
+        repeat: -1,
+        ease: "none",
+      });
+    }
+  }, []);
+
   return (
     <section className="relative w-full">
       <div className="flex w-full items-end justify-center px-[11.02px] pt-[115.2px] pb-[11.51px] bg-[#101010]">
-        <h1 className="flex-1 text-center [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-neutral-100 text-[180px] tracking-[0] leading-[180px]">
+        <h1
+          ref={titleRef}
+          className="flex-1 text-center [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-neutral-100 text-[180px] tracking-[0] leading-[180px]"
+        >
           UMA DÉCADA <br />
           MAD JAM FEST
         </h1>
       </div>
 
       <div className="flex flex-col w-full items-start p-2.5">
-        <div className="relative self-stretch w-full h-[1091.3px] overflow-hidden rotate-[0.01deg]">
+        <div
+          ref={videoRef}
+          className="relative self-stretch w-full h-[1091.3px] overflow-hidden rotate-[0.01deg]"
+        >
           <img
             className="absolute top-[-193px] left-0 w-full h-[1469px] rotate-[-0.01deg] object-cover"
             alt="Video"
@@ -396,7 +460,10 @@ export const MainHeroSection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="absolute top-[707px] left-[289px] w-[214px] h-[206px]">
+      <div
+        ref={badgeRef}
+        className="absolute top-[707px] left-[289px] w-[214px] h-[206px] cursor-pointer hover:scale-110 transition-transform duration-300"
+      >
         <div className="absolute top-[5px] left-[3px] w-[135px] h-[136px] bg-neutral-100 rounded-[67.5px/68px] shadow-[0px_4px_4px_#00000040]" />
 
         <div className="absolute top-4 left-[13px] w-[246px] h-[114px]">
