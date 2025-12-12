@@ -81,7 +81,9 @@ export default {
         lg: "var(--shadow-lg)",
       },
       fontSize: {
+        ...require("tailwindcss/defaultTheme").fontSize,
         display: "var(--font-display)",
+        title: "var(--font-title)",
         h1: "var(--font-h1)",
         h2: "var(--font-h2)",
         h3: "var(--font-h3)",

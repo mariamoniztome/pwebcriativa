@@ -4,10 +4,12 @@ export const MainHeroSection = (): JSX.Element => {
   return (
     <section className="relative w-full">
       <div className="flex w-full items-end justify-center px-3 pt-28 pb-3 bg-background">
-        <h1 className="flex-1 text-center font-montreal-bold font-bold text-foreground text-9xl leading-tight animate-fade-in-up">
-          UMA DÉCADA <br />
-          MAD JAM FEST
-        </h1>
+        <h1 className="flex-1 font-montreal-bold font-extrabold text-foreground text-title leading-[1.45] tracking-normal animate-fade-in-up">
+  UMA DÉCADA
+  <br />
+  MAD JAM FEST
+</h1>
+
       </div>
 
       <div className="flex flex-col w-full items-start p-2.5">
@@ -29,7 +31,7 @@ export const MainHeroSection = (): JSX.Element => {
           {circularTextLetters.map((letter, index) => (
             <div
               key={`letter-${index}`}
-              className={`absolute w-1 h-1 ${letter.top} ${letter.left} flex items-end justify-center ${letter.rotation} font-sans font-normal text-black text-xs text-center whitespace-nowrap`}
+              className={`absolute w-1 h-1 ${letter.top} ${letter.left} flex items-end justify-center ${letter.rotation} font-sans font-normal text-black text-xs  whitespace-nowrap`}
             >
               {letter.char}
             </div>

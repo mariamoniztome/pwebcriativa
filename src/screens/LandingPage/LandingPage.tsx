@@ -30,27 +30,24 @@ export const LandingPage = (): JSX.Element => {
 
   return (
     <div className="bg-background overflow-x-hidden w-full min-w-screen-xl relative">
-      <header className="flex max-w-full w-screen-xl h-32 items-end justify-center px-3 pt-28 pb-3 relative bg-background">
-        <div className="relative flex items-center justify-center w-64 h-32 font-montreal font-normal text-foreground text-3xl tracking-normal leading-relaxed whitespace-nowrap">
-          23-27 de fevereiro
+      <header className="mx-auto flex h-24 w-full max-w-screen-xl items-center justify-between bg-background px-4">
+        {/* Logo */}
+        <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+
+        {/* Date */}
+        <div className="text-2xl font-normal text-foreground">
+          23–27 de fevereiro
         </div>
 
-        <div className="absolute top-px left-0 w-full h-32">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsMenuOpen(true)}
-            className="absolute top-12 right-0 w-16 h-8 p-0 hover:bg-transparent hover:scale-110 transition-transform duration-300"
-          >
-            <Menu className="w-8 h-8 text-foreground" />
-          </Button>
-
-          <img
-            className="absolute top-0 left-0 w-32 h-32 object-cover"
-            alt="Logo"
-            src="/logo.png"
-          />
-        </div>
+        {/* Menu */}
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => setIsMenuOpen(true)}
+          className="h-10 w-10  hover:bg-transparent"
+        >
+          <Menu className="text-2xl stroke-[2.2]" />
+        </Button>
       </header>
 
       <MainHeroSection />
@@ -103,7 +100,10 @@ export const LandingPage = (): JSX.Element => {
         onClick={scrollToBottom}
         className="bottom-32 right-32 fixed w-20 h-20 p-0 hover:bg-transparent hover:scale-110 hover:translate-y-2 transition-all duration-300"
       >
-        <ChevronDown className="w-full h-full text-foreground" strokeWidth={1} />
+        <ChevronDown
+          className="w-full h-full text-foreground"
+          strokeWidth={1}
+        />
       </Button>
 
       <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
