@@ -20,6 +20,10 @@ module.exports = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -27,10 +31,6 @@ module.exports = {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -40,11 +40,54 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+        error: "hsl(var(--error))",
+        info: "hsl(var(--info))",
+        grey: {
+          50: "#FAFAFA",
+          100: "#F5F5F5",
+          200: "#E5E5E5",
+          300: "#D4D4D4",
+          400: "#A3A3A3",
+          500: "#737373",
+          600: "#525252",
+          700: "#404040",
+          800: "#262626",
+          900: "#171717",
+        },
+      },
+      spacing: {
+        4: "var(--space-4)",
+        8: "var(--space-8)",
+        12: "var(--space-12)",
+        16: "var(--space-16)",
+        24: "var(--space-24)",
+        32: "var(--space-32)",
+        48: "var(--space-48)",
+        64: "var(--space-64)",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        full: "var(--radius-full)",
+        "8": "var(--radius-8)",
+        "4": "var(--radius-4)",
+      },
+      boxShadow: {
+        sm: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+      },
+      fontSize: {
+        display: "var(--font-display)",
+        h1: "var(--font-h1)",
+        h2: "var(--font-h2)",
+        h3: "var(--font-h3)",
+        body: "var(--font-body)",
+        "body-small": "var(--font-body-small)",
+        caption: "var(--font-caption)",
       },
       fontFamily: {
         sans: [

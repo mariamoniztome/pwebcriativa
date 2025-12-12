@@ -76,7 +76,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       />
       <div
         ref={menuRef}
-        className="fixed top-0 right-0 h-full w-full max-w-[600px] bg-[#101010] z-50 shadow-2xl translate-x-full"
+        className="fixed top-0 right-0 h-full w-full max-w-[600px] bg-background border-l border-border z-50 shadow-lg translate-x-full"
       >
         <div className="flex flex-col h-full p-10">
           <div className="flex justify-between items-center mb-20">
@@ -128,8 +128,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                   }}
                   className={`block text-[60px] leading-[1.2] transition-all duration-300 ${
                     item.isHighlight
-                      ? "[font-family:'Neue_Montreal-Italic',Helvetica] italic text-[#fa5302] hover:text-[#ff6f2e]"
-                      : "[font-family:'Neue_Montreal-Regular',Helvetica] text-neutral-100 hover:text-neutral-400"
+                      ? "[font-family:'Neue_Montreal-Italic',Helvetica] italic text-primary hover:brightness-110"
+                      : "[font-family:'Neue_Montreal-Regular',Helvetica] text-foreground hover:text-muted-foreground"
                   }`}
                 >
                   {item.text}
@@ -139,7 +139,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
           </nav>
 
           <div className="mt-auto">
-            <p className="text-neutral-400 text-sm [font-family:'Neue_Montreal-Regular',Helvetica]">
+            <p className="text-muted-foreground text-body-small [font-family:'Neue_Montreal-Regular',Helvetica]">
               23-27 de fevereiro
             </p>
           </div>

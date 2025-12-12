@@ -51,7 +51,7 @@ export const EventDaysSection: React.FC<EventDaysSectionProps> = ({
 
       day.addEventListener("mouseenter", () => {
         gsap.to(day, {
-          backgroundColor: "rgba(250, 83, 2, 0.05)",
+          backgroundColor: "hsl(var(--primary) / 0.05)",
           duration: 0.3,
           ease: "power2.out",
         });
@@ -94,19 +94,19 @@ export const EventDaysSection: React.FC<EventDaysSectionProps> = ({
             if (el) daysRef.current[index] = el;
           }}
           onClick={() => onDayClick(event.day, event.date)}
-          className="relative w-full h-[350px] border-b-2 border-neutral-100 flex items-center justify-between px-10 cursor-pointer transition-colors"
+          className="relative w-full h-[350px] border-b-2 border-border flex items-center justify-between px-10 cursor-pointer transition-colors"
         >
-          <div className="flex items-center justify-center [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-neutral-100 text-[140px] tracking-[0] leading-[204.9px] whitespace-nowrap">
+          <div className="flex items-center justify-center [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-foreground text-[140px] tracking-[0] leading-[204.9px] whitespace-nowrap">
             {event.day}
           </div>
 
           <div className="flex items-center gap-8">
-            <div className="flex items-center justify-center [font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-[#fa5302] text-[30.4px] text-right tracking-[0] leading-[39.5px] whitespace-nowrap">
+            <div className="flex items-center justify-center [font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-primary text-[30.4px] text-right tracking-[0] leading-[39.5px] whitespace-nowrap">
               {event.date}
             </div>
 
             <ChevronRightIcon
-              className="arrow-icon w-[108px] h-[109px] text-neutral-100"
+              className="arrow-icon w-[108px] h-[109px] text-foreground"
               strokeWidth={1}
             />
           </div>

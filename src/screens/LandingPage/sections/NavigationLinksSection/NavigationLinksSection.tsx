@@ -8,17 +8,17 @@ const navigationLinks = [
   {
     text: "PROGRAMA",
     className:
-      "[font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-neutral-100",
+      "[font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-foreground",
   },
   {
     text: "CONTACTO",
     className:
-      "[font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-neutral-100",
+      "[font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-foreground",
   },
   {
     text: "OPEN CALLS",
     className:
-      "[font-family:'Neue_Montreal-Italic',Helvetica] font-normal italic text-[#fa5302]",
+      "[font-family:'Neue_Montreal-Italic',Helvetica] font-normal italic text-primary",
   },
 ];
 
@@ -79,7 +79,7 @@ export const NavigationLinksSection = (): JSX.Element => {
             alt="Background workspace"
             src="/img-13.png"
           />
-          <div className="absolute top-0 left-0 w-full h-full bg-[#1010104c]" />
+          <div className="absolute top-0 left-0 w-full h-full bg-background/30" />
         </div>
 
         <nav className="absolute top-[91px] left-0 right-0 flex flex-col items-center">

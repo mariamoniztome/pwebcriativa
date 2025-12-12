@@ -3,8 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Button } from "../../components/ui/button";
-import { MobileMenu } from "../../components/MobileMenu";
-import { EventDayDialog } from "../../components/EventDayDialog";
+import { MobileMenu } from "../../components/MobileMenu/MobileMenu";
+import { EventDayDialog } from "../../components/EventDayDialog/EventDayDialog";
 import { AnnouncementMarqueeSection } from "./sections/AnnouncementMarqueeSection";
 import { EventDaysSection } from "./sections/EventDaysSection";
 import { MainHeroSection } from "./sections/MainHeroSection";
@@ -157,9 +157,9 @@ export const LandingPage = (): JSX.Element => {
   };
 
   return (
-    <div className="bg-[#101010] overflow-x-hidden w-full min-w-[1440px] relative">
-      <header className="flex max-w-[99999px] w-[1440px] max-h-[99999px] h-[136px] items-end justify-center pl-[11.02px] pr-[12.01px] pt-[115.2px] pb-[11.51px] relative bg-[#101010]">
-        <div className="relative flex items-center justify-center w-[264px] h-[123px] mt-[-114.71px] [font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-neutral-100 text-3xl tracking-[0] leading-[145px] whitespace-nowrap">
+    <div className="bg-background overflow-x-hidden w-full min-w-[1440px] relative">
+      <header className="flex max-w-[99999px] w-[1440px] max-h-[99999px] h-[136px] items-end justify-center pl-[11.02px] pr-[12.01px] pt-[115.2px] pb-[11.51px] relative bg-background">
+        <div className="relative flex items-center justify-center w-[264px] h-[123px] mt-[-114.71px] [font-family:'Neue_Montreal-Regular',Helvetica] font-normal text-foreground text-3xl tracking-[0] leading-[145px] whitespace-nowrap">
           23-27 de fevereiro
         </div>
 
@@ -207,11 +207,11 @@ export const LandingPage = (): JSX.Element => {
         className="relative w-full py-20"
       >
         <div className="w-[1440px] mx-auto flex flex-col gap-3">
-          <h2 className="flex items-center justify-center ml-[38px] w-[276px] h-[29px] -mt-1 [font-family:'Neue_Montreal-Medium',Helvetica] font-medium text-neutral-100 text-xl tracking-[0] leading-10 whitespace-nowrap">
+          <h2 className="flex items-center justify-center ml-[38px] w-[276px] h-[29px] -mt-1 [font-family:'Neue_Montreal-Medium',Helvetica] font-medium text-foreground text-h3 tracking-[0] leading-10 whitespace-nowrap">
             Parceiros &amp; Patrocinios
           </h2>
 
-          <div className="grid w-[1440px] h-[154px] relative grid-cols-6 grid-rows-2 gap-[0px_26px] bg-[#101010]">
+          <div className="grid w-[1440px] h-[154px] relative grid-cols-6 grid-rows-2 gap-[0px_26px] bg-background">
             {partnerLogos.map((logo, index) => (
               <img
                 key={index}

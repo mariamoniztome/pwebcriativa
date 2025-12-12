@@ -435,10 +435,10 @@ export const MainHeroSection = (): JSX.Element => {
 
   return (
     <section className="relative w-full">
-      <div className="flex w-full items-end justify-center px-[11.02px] pt-[115.2px] pb-[11.51px] bg-[#101010]">
+      <div className="flex w-full items-end justify-center px-[11.02px] pt-[115.2px] pb-[11.51px] bg-background">
         <h1
           ref={titleRef}
-          className="flex-1 text-center [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-neutral-100 text-[180px] tracking-[0] leading-[180px]"
+          className="flex-1 text-center [font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-foreground text-[180px] tracking-[0] leading-[180px]"
         >
           UMA DÉCADA <br />
           MAD JAM FEST
@@ -456,7 +456,7 @@ export const MainHeroSection = (): JSX.Element => {
             src="/video.png"
           />
 
-          <div className="absolute top-[-227px] left-px w-full h-[2181px] bg-[#1010104c] rotate-[-0.01deg]" />
+          <div className="absolute top-[-227px] left-px w-full h-[2181px] bg-background/30 rotate-[-0.01deg]" />
         </div>
       </div>
 
@@ -464,7 +464,7 @@ export const MainHeroSection = (): JSX.Element => {
         ref={badgeRef}
         className="absolute top-[707px] left-[289px] w-[214px] h-[206px] cursor-pointer hover:scale-110 transition-transform duration-300"
       >
-        <div className="absolute top-[5px] left-[3px] w-[135px] h-[136px] bg-neutral-100 rounded-[67.5px/68px] shadow-[0px_4px_4px_#00000040]" />
+        <div className="absolute top-[5px] left-[3px] w-[135px] h-[136px] bg-foreground rounded-[67.5px/68px] shadow-md" />
 
         <div className="absolute top-4 left-[13px] w-[246px] h-[114px]">
           {circularTextLetters.map((letter, index) => (

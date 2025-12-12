@@ -73,50 +73,50 @@ export const EventDayDialog: React.FC<EventDayDialogProps> = ({
       />
       <div
         ref={contentRef}
-        className="relative bg-[#1a1a1a] border-2 border-neutral-100 rounded-lg p-10 max-w-[800px] w-[90%] opacity-0"
+        className="relative bg-card border-2 border-border rounded-lg p-10 max-w-[800px] w-[90%] opacity-0 shadow-lg"
       >
         <Button
           variant="ghost"
           size="icon"
           onClick={handleClose}
-          className="absolute top-4 right-4 w-[40px] h-[40px] p-0 hover:bg-neutral-800 hover:rotate-90 transition-all duration-300"
+          className="absolute top-4 right-4 w-[40px] h-[40px] p-0 hover:bg-muted hover:rotate-90 transition-all duration-300"
         >
-          <X className="w-6 h-6 text-neutral-100" />
+          <X className="w-6 h-6 text-foreground" />
         </Button>
 
         <div className="mb-8">
-          <h2 className="[font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-neutral-100 text-[80px] leading-tight">
+          <h2 className="[font-family:'Neue_Montreal-Bold',Helvetica] font-bold text-foreground text-[80px] leading-tight">
             {day}
           </h2>
-          <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-[#fa5302] text-[40px] mt-2">
+          <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-primary text-[40px] mt-2">
             {date}
           </p>
         </div>
 
         <div className="space-y-6">
-          <div className="border-l-4 border-[#fa5302] pl-6">
-            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-neutral-100 text-2xl mb-2">
+          <div className="border-l-4 border-primary pl-6">
+            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-foreground text-h3 mb-2">
               10:00 - 12:00
             </h3>
-            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-neutral-300 text-lg">
+            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-muted-foreground text-body">
               Workshop de produção musical
             </p>
           </div>
 
-          <div className="border-l-4 border-[#fa5302] pl-6">
-            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-neutral-100 text-2xl mb-2">
+          <div className="border-l-4 border-primary pl-6">
+            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-foreground text-h3 mb-2">
               14:00 - 16:00
             </h3>
-            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-neutral-300 text-lg">
+            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-muted-foreground text-body">
               Painel: O futuro da música independente
             </p>
           </div>
 
-          <div className="border-l-4 border-[#fa5302] pl-6">
-            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-neutral-100 text-2xl mb-2">
+          <div className="border-l-4 border-primary pl-6">
+            <h3 className="[font-family:'Neue_Montreal-Medium',Helvetica] text-foreground text-h3 mb-2">
               20:00 - 23:00
             </h3>
-            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-neutral-300 text-lg">
+            <p className="[font-family:'Neue_Montreal-Regular',Helvetica] text-muted-foreground text-body">
               Concertos ao vivo
             </p>
           </div>
