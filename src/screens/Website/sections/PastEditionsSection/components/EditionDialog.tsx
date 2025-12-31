@@ -16,7 +16,7 @@ export const EditionDialog = ({
     <Dialog open={true} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl bg-neutral-950 text-white">
         <DialogHeader>
-          <DialogTitle className="text-3xl font-bold text-orange-500">
+          <DialogTitle className="text-3xl font-bold text-primary">
             {edition.title ?? `Edição ${edition.year}`}
           </DialogTitle>
         </DialogHeader>

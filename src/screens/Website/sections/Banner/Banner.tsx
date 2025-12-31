@@ -1,6 +1,6 @@
 export const Banner = (): JSX.Element => {
   return (
-    <section className="border-y border-neutral-100 bg-[#fa5302]">
+    <section className="relative border-y border-neutral-100 bg-primary">
       <div className="mx-auto flex min-h-[240px]  items-center justify-center gap-6  sm:min-h-[300px]">
         {/* Logo */}
         <img

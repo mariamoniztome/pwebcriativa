@@ -20,7 +20,7 @@ export const GalleryItem = ({ item, onOpen }: GalleryItemProps) => {
 
       {/* Hover overlay */}
       <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        <span className="text-4xl font-bold tracking-wide text-orange-500">
+        <span className="text-4xl font-bold tracking-wide text-primary">
           PHOTO
         </span>
       </div>

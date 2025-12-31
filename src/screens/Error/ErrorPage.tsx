@@ -18,7 +18,7 @@ export const ErrorPage = (): JSX.Element => {
       {/* Content */}
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center gap-8 px-4 text-center">
         {/* Error code */}
-        <h1 className="text-[clamp(6rem,20vw,15rem)] font-black leading-none text-orange-500">
+        <h1 className="text-[clamp(6rem,20vw,15rem)] font-black leading-none text-primary">
           404
         </h1>
 

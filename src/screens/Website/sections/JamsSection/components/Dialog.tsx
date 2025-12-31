@@ -12,7 +12,7 @@ export const GalleryDialog = ({ item, onClose }: GalleryDialogProps) => {
     <Dialog open={!!item} onOpenChange={onClose}>
       <DialogContent className="max-w-4xl bg-neutral-950 text-white">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-orange-500">
+          <DialogTitle className="text-2xl font-bold text-primary">
             {item.title}
           </DialogTitle>
         </DialogHeader>
