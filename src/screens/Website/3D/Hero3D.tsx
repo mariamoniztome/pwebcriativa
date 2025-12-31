@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -136,8 +136,11 @@ const LavaLampPlane = () => {
 
 const Hero3D = () => {
   return (
-    <div className="absolute inset-0 w-full h-full z-0 bg-black">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+    <div className="absolute inset-0 w-full h-full z-0 bg-black overflow-hidden">
+      <Canvas 
+        camera={{ position: [0, 0, 1] }}
+        style={{ width: '100%', height: '100%', display: 'block' }}
+      >
         <LavaLampPlane />
       </Canvas>
     </div>
