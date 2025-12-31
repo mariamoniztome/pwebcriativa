@@ -5,7 +5,7 @@ import { VideoSection } from "./sections/VideoSection";
 import { FaqsSection } from "./sections/FaqsSection";
 import { FestivalIntroSection } from "./sections/FestivalIntroSection";
 import { ParticipationSection } from "./sections/ParticipationSection";
-import { PartnersFooterSection } from "./sections/PartnersFooterSection";
+import { Footer } from "./sections/Footer";
 import { PastEditionsSection } from "./sections/PastEditionsSection";
 import { JamsGallerySection } from "./sections/JamsSection";
 
@@ -23,7 +23,7 @@ export const App = (): JSX.Element => {
         <PastEditionsSection />
         <FaqsSection />
         <Partners />
-        <PartnersFooterSection />
+        <Footer />
       </main>
 
       {/* Grain overlay */}
