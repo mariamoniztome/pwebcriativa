@@ -34,14 +34,14 @@ const faqItems = [
 
 export const FaqsSection = (): JSX.Element => {
   return (
-    <section className="relative bg-black py-24">
+    <section className="relative bg-black py-24 px-4">
       <div className="mx-auto  ">
         {/* Divider */}
         <Separator className="mb-12 bg-white/20" />
 
-        <div className="flex flex-col gap-12 lg:flex-row lg:items-start">
+        <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           {/* Title */}
-          <h2 className="text-[clamp(3rem,6vw,6rem)] font-bold leading-none text-white lg:w-1/2">
+        <h2 className="mb-12 text-[clamp(3rem,8vw,6rem)] font-bold leading-none text-white">
             FAQs
           </h2>
 

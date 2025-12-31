@@ -17,7 +17,7 @@ const partnerLogos = [
 
 export const Partners = (): JSX.Element => {
   return (
-    <section className="relative bg-black py-24">
+    <section className="relative bg-black py-24 px-4">
       <div className="mx-auto  ">
         {/* Divider */}
         <Separator className="mb-12 bg-white/20" />
@@ -29,16 +29,16 @@ export const Partners = (): JSX.Element => {
           </h2>
 
           {/* Logos grid */}
-          <div className="grid w-full max-w-xl grid-cols-2 gap-8 sm:grid-cols-3">
+          <div className="grid w-full max-w-xl grid-cols-2 gap-8 sm:grid-cols-4">
             {partnerLogos.map((logo, index) => (
               <div
                 key={index}
-                className="flex items-center justify-center rounded-lg bg-neutral-900 p-4"
+                className="flex items-center justify-center rounded-lg"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-16 w-auto object-contain opacity-80 transition-opacity hover:opacity-100"
+                  className="w-96 object-contain opacity-80 transition-opacity hover:opacity-100"
                 />
               </div>
             ))}

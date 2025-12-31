@@ -9,7 +9,7 @@ export const GalleryItem = ({ item, onOpen }: GalleryItemProps) => {
   return (
     <button
       onClick={() => onOpen(item)}
-      className="group relative aspect-[4/3] w-full overflow-hidden"
+      className="group relative aspect-[6/3] w-full overflow-hidden border border-transparent transition-border duration-300 group-hover:border-primary"
     >
       {/* Image */}
       <img
@@ -21,7 +21,7 @@ export const GalleryItem = ({ item, onOpen }: GalleryItemProps) => {
       {/* Hover overlay */}
       <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <span className="text-4xl font-bold tracking-wide text-primary">
-          PHOTO
+          {item.title}
         </span>
       </div>
     </button>

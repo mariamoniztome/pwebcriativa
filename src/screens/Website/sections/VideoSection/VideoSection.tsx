@@ -1,5 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
-import { Button } from "../../../../components/ui/button";
+import TicketButton from "../../components/TicketButton";
 
 export const VideoSection = (): JSX.Element => {
   return (
@@ -15,15 +14,8 @@ export const VideoSection = (): JSX.Element => {
       <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full items-center justify-center">
-        <Button
-          variant="outline"
-          size="lg"
-        >
-          Garante os teus bilhetes
-          <ArrowUpRight className="h-4 w-4" />
-        </Button>
-      </div>
+      <TicketButton />
+
     </section>
   );
 };

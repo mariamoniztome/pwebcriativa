@@ -6,14 +6,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      black: "#101010",
+      white: "#F5F5F5",
+    },
     extend: {
       fontFamily: {
         "neue-montreal": ["Neue Montreal", "sans-serif"],
       },
       colors: {
-        black: "#101010",
-        white: "#F5F5F5",
-        border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",

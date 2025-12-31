@@ -4,7 +4,7 @@ import { Separator } from "../../../../components/ui/separator";
 
 export const ParticipationSection = (): JSX.Element => {
   return (
-    <section className="relative bg-black py-24">
+    <section className="relative bg-black py-24 px-4">
       <div className="mx-auto  ">
         {/* Divider */}
         <Separator className="mb-12 bg-white/20" />
