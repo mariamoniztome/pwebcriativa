@@ -6,7 +6,7 @@ const navigationLinks = [{ label: "BILHETES" }, { label: "VOLUNTARIADO" }];
 
 export const FestivalIntroSection = (): JSX.Element => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden">
+    <section className="relative min-h-screen w-full overflow-hidden bg-black">
       {/* Background */}
 
       <div className="absolute inset-0 h-full w-full object-cover">

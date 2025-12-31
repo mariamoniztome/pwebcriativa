@@ -55,7 +55,7 @@ export const PastEditionsSection = (): JSX.Element => {
   };
 
   return (
-    <section className="bg-neutral-950 py-24">
+    <section className="relative bg-black py-24">
       <div className="mx-auto  ">
         <h2 className="mb-12 text-6xl font-bold text-white">
           Edições passadas

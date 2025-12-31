@@ -3,7 +3,7 @@ import { Button } from "../../../../components/ui/button";
 
 export const VideoSection = (): JSX.Element => {
   return (
-    <section className="relative h-[80vh] min-h-[500px] w-full overflow-hidden">
+    <section className="relative h-[80vh] min-h-[500px] w-full overflow-hidden bg-black">
       {/* Background */}
       <img
         src="/video.png"

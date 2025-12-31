@@ -20,7 +20,7 @@ export const Footer = (): JSX.Element => {
   ];
 
   return (
-    <footer className="bg-neutral-950 pt-24">
+    <footer className="relative bg-black pt-24 pb-4">
       <div className="mx-auto  ">
         {/* Top section */}
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">

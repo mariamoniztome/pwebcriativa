@@ -7,7 +7,12 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        "neue-montreal": ["Neue Montreal", "sans-serif"],
+      },
       colors: {
+        black: "#101010",
+        white: "#F5F5F5",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
