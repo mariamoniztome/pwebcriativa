@@ -10,4 +10,5 @@ export type Edition = {
   image: string;
   title?: string;
   description?: string;
+  coverImage?: string;
 };
