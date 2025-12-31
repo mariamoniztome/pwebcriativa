@@ -16,7 +16,7 @@ export const FestivalIntroSection = (): JSX.Element => {
       {/* Content */}
       <div className="relative mx-auto flex min-h-screen flex-col px-4 pt-40 sm:px-6 lg:flex-row lg:gap-16">
         {/* Main content */}
-        <div className="flex flex-1 flex-col gap-4 text-white">
+        <div className="flex flex-1 flex-col gap-4 text-white mix-blend-exclusion">
           <h1 className="text-[clamp(3rem,10vw,10rem)] font-black leading-none text-orange-500">
             MAD JAM FEST
           </h1>

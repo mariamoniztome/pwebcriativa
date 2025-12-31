@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import { useRef, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 
@@ -7,7 +7,7 @@ const MetaballShader = {
     uTime: { value: 0 },
     uResolution: { value: new THREE.Vector2() },
     uMouse: { value: new THREE.Vector2(0.5, 0.5) },
-    uPoints: { value: [] },
+    uPoints: { value: [] as THREE.Vector3[] },
   },
   vertexShader: `
     varying vec2 vUv;
@@ -56,7 +56,7 @@ const MetaballShader = {
 };
 
 const LavaLampPlane = () => {
-  const meshRef = useRef(null);
+  const meshRef = useRef<THREE.Mesh>(null);
   const { size, mouse, viewport } = useThree();
   
   const blobs = useMemo(() => {
@@ -76,7 +76,7 @@ const LavaLampPlane = () => {
 
   useFrame((state) => {
     if (!meshRef.current) return;
-    const material = meshRef.current.material;
+    const material = meshRef.current.material as THREE.ShaderMaterial;
     const time = state.clock.getElapsedTime();
     
     material.uniforms.uTime.value = time;
