@@ -81,7 +81,7 @@ const partnerLogos = [
   },
 ];
 
-export const Website = (): JSX.Element => {
+export const App = (): JSX.Element => {
   return (
     <div className="bg-[#101010] overflow-x-hidden w-full min-w-[1440px] relative">
       <header className="fixed top-0 left-0 w-full h-[95px] z-50">

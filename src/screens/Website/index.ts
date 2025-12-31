@@ -1,1 +1,1 @@
-export { Website } from "./Website";
+export { App } from "./App";
