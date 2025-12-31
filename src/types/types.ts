@@ -4,3 +4,10 @@ export type JamItem = {
   image: string;
   description: string;
 };
+
+export type Edition = {
+  year: string;
+  image: string;
+  title?: string;
+  description?: string;
+};
