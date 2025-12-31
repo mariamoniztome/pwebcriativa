@@ -1,18 +1,18 @@
 import { Separator } from "../../../../components/ui/separator";
 
 const partnerLogos = [
-  { src: "/img-7.png", alt: "Partner logo" },
-  { src: "/img-6.png", alt: "Partner logo" },
-  { src: "/img.png", alt: "Partner logo" },
-  { src: "/img-1.png", alt: "Partner logo" },
-  { src: "/img-10.png", alt: "Partner logo" },
-  { src: "/img-8.png", alt: "Partner logo" },
-  { src: "/img-2.png", alt: "Partner logo" },
-  { src: "/img-5.png", alt: "Partner logo" },
-  { src: "/img-3.png", alt: "Partner logo" },
-  { src: "/img-4.png", alt: "Partner logo" },
-  { src: "/img-9.png", alt: "Partner logo" },
-  { src: "/img-11.png", alt: "Partner logo" },
+  { src: "/partner-8.png", alt: "Partner logo" },
+  { src: "/partner-7.png", alt: "Partner logo" },
+  { src: "/partner-1.png", alt: "Partner logo" },
+  { src: "/partner-2.png", alt: "Partner logo" },
+  { src: "/partner-11.png", alt: "Partner logo" },
+  { src: "/partner-9.png", alt: "Partner logo" },
+  { src: "/partner-3.png", alt: "Partner logo" },
+  { src: "/partner-6.png", alt: "Partner logo" },
+  { src: "/partner-4.png", alt: "Partner logo" },
+  { src: "/partner-5.png", alt: "Partner logo" },
+  { src: "/partner-10.png", alt: "Partner logo" },
+  { src: "/partner-12.png", alt: "Partner logo" },
 ];
 
 export const Partners = (): JSX.Element => {
