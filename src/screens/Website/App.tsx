@@ -88,7 +88,7 @@ export const App = (): JSX.Element => {
         <img
           className="absolute top-0 left-0 w-[1440px] h-[95px]"
           alt="Header"
-          src="/header.svg"
+          src="/logo-orange.svg"
         />
         <div className="absolute top-[22px] right-2.5 w-[292px] h-[52px]">
           <img
@@ -114,7 +114,7 @@ export const App = (): JSX.Element => {
           <img
             className="absolute w-[9.18%] top-[35px] left-0 h-[140px]"
             alt="Svg"
-            src="/svg.svg"
+            src="/logo-black.svg"
           />
         </div>
       </section>

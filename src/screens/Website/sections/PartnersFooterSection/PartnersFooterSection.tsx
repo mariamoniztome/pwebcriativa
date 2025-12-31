@@ -74,7 +74,7 @@ export const PartnersFooterSection = (): JSX.Element => {
           <span className="font-bold italic">MAD</span>
         </h2>
 
-        <img className="w-[110px] h-28" alt="Div" src="/div.svg" />
+        <img className="w-[110px] h-28" alt="Div" src="/logo.svg" />
       </div>
     </section>
   );
