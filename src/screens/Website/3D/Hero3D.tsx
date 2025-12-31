@@ -20,7 +20,7 @@ const MetaballShader = {
     uniform float uTime;
     uniform vec2 uResolution;
     uniform vec2 uMouse;
-    uniform vec3 uPoints[6];
+    uniform vec3 uPoints[10];
     varying vec2 vUv;
 
     void main() {
@@ -30,7 +30,7 @@ const MetaballShader = {
       
       float total = 0.0;
       
-      for (int i = 0; i < 6; i++) {
+      for (int i = 0; i < 10; i++) {
         vec2 p = uPoints[i].xy;
         p.x *= aspect;
         float r = uPoints[i].z;
@@ -57,13 +57,13 @@ const MetaballShader = {
 
 const LavaLampPlane = () => {
   const meshRef = useRef(null);
-  const { size, mouse } = useThree();
+  const { size, mouse, viewport } = useThree();
   
   const blobs = useMemo(() => {
-    return Array.from({ length: 6 }).map(() => ({
+    return Array.from({ length: 10 }).map(() => ({
       pos: new THREE.Vector2(Math.random(), Math.random()),
       vel: new THREE.Vector2((Math.random() - 0.5) * 0.001, (Math.random() - 0.5) * 0.001),
-      radius: 0.08 + Math.random() * 0.12
+      radius: 0.10 + Math.random() * 0.10
     }));
   }, []);
 
@@ -114,7 +114,7 @@ const LavaLampPlane = () => {
 
   return (
     <mesh ref={meshRef}>
-      <planeGeometry args={[2, 2]} />
+      <planeGeometry args={[viewport.width, viewport.height]} />
       <shaderMaterial
         transparent={true}
         uniforms={uniforms}
