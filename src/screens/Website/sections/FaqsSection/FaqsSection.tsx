@@ -1,4 +1,5 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../../../../components/ui/accordion";
+import { Separator } from "../../../../components/ui/separator";
 
 const faqItems = [
   {
@@ -34,13 +35,9 @@ const faqItems = [
 export const FaqsSection = (): JSX.Element => {
   return (
     <section className="bg-neutral-950 py-24">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto  px-4">
         {/* Divider */}
-        <img
-          src="/divider.svg"
-          alt=""
-          className="mb-12 w-full"
-        />
+        <Separator className="mb-12 bg-white/20" />
 
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start">
           {/* Title */}

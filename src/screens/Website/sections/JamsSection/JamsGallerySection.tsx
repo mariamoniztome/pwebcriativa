@@ -9,7 +9,7 @@ export const JamsGallerySection = (): JSX.Element => {
 
   return (
     <section className="relative bg-neutral-950 py-24">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto  px-4">
         <h2 className="mb-12 text-6xl font-bold text-white">
           Jams
         </h2>

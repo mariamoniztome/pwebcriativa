@@ -1,16 +1,13 @@
 import { Button } from "../../../../components/ui/button";
 import { Input } from "../../../../components/ui/input";
+import { Separator } from "../../../../components/ui/separator";
 
 export const ParticipationSection = (): JSX.Element => {
   return (
     <section className="bg-neutral-950 py-24">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto  px-4">
         {/* Divider */}
-        <img
-          src="/divider.svg"
-          alt=""
-          className="mb-12 w-full"
-        />
+        <Separator className="mb-12 bg-white/20" />
 
         {/* Title */}
         <h2 className="mb-12 text-[clamp(3rem,8vw,6rem)] font-bold leading-none text-white">

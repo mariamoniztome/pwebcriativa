@@ -21,7 +21,7 @@ export const Footer = (): JSX.Element => {
 
   return (
     <footer className="bg-neutral-950 pt-24">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto  px-4">
         {/* Top section */}
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           {/* Contact */}
