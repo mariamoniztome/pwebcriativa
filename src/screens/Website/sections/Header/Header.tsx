@@ -3,7 +3,7 @@ import { Button } from "../../../../components/ui/button";
 export const Header = (): JSX.Element => {
   return (
     <header className="fixed inset-x-0 top-0 z-50 h-[95px]">
-      <div className="mx-auto flex h-full items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-full items-center justify-between ">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img

@@ -1,7 +1,7 @@
 export const Banner = (): JSX.Element => {
   return (
     <section className="border-y border-neutral-100 bg-[#fa5302]">
-      <div className="mx-auto flex min-h-[240px]  items-center justify-center gap-6 px-4 sm:min-h-[300px]">
+      <div className="mx-auto flex min-h-[240px]  items-center justify-center gap-6  sm:min-h-[300px]">
         {/* Logo */}
         <img
           src="/logo-black.svg"
