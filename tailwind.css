@@ -68,6 +68,47 @@
   .all-\[unset\] {
     all: unset;
   }
+
+  .scrollbar-ios {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  .scrollbar-ios::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-ios::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  .scrollbar-ios::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-ios::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255);
+    border-radius: 3px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  .scrollbar-ios::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255);
+  }
+
+  /* Remove scrollbar entirely */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 :root {
