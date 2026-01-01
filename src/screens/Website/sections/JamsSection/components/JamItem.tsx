@@ -36,8 +36,8 @@ export const JamItem = ({ item, onOpen }: JamItemProps) => {
         />
 
         {/* Hover overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <span className="text-4xl font-bold tracking-wide text-primary">
+        <div className="absolute inset-0 flex items-end justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <span className="text-9xl font-light tracking-wide text-primary">
             {item.category}
           </span>
         </div>

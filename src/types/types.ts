@@ -4,6 +4,9 @@ export type JamItem = {
   image: string;
   description: string;
   category: "PHOTO" | "MOTION" | "GAME" | "ANIMATION";
+  subtitle?: string;
+  duration?: string;
+  details?: string[];
 };
 
 export type Edition = {

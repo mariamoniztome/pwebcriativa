@@ -1,4 +1,5 @@
 import * as React from "react";
+import { JamItem } from "../../../../../types/types";
 import {
   Dialog,
   DialogContent,
@@ -11,9 +12,23 @@ type JamDialogProps = {
   children?: React.ReactNode;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  activeItem?: JamItem | null;
 };
 
-export function JamDialog({ children, open, onOpenChange }: JamDialogProps) {
+export function JamDialog({ children, open, onOpenChange, activeItem }: JamDialogProps) {
+  if (!activeItem) {
+    return (
+      <Dialog open={open} onOpenChange={onOpenChange}>
+        {children && <DialogTrigger asChild>{children}</DialogTrigger>}
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Loading...</DialogTitle>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    );
+  }
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       {children && <DialogTrigger asChild>{children}</DialogTrigger>}
@@ -21,66 +36,48 @@ export function JamDialog({ children, open, onOpenChange }: JamDialogProps) {
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
-              PHOTO JAM
+            {activeItem.title.toUpperCase()}
           </DialogTitle>
         </DialogHeader>
 
         <div className="mt-12 space-y-12">
           <section className="space-y-4">
-            <p className="uppercase tracking-wide text-sm sm:text-base">
-              Projeto Fotográfico Intensivo
-            </p>
+            {activeItem.subtitle && (
+              <p className="uppercase tracking-wide text-sm sm:text-base">
+                {activeItem.subtitle}
+              </p>
+            )}
 
-            <p className="uppercase tracking-wide text-sm sm:text-base">
-              48 horas de captura criativa
-            </p>
+            {activeItem.duration && (
+              <p className="uppercase tracking-wide text-sm sm:text-base">
+                {activeItem.duration}
+              </p>
+            )}
 
-            <p className="max-w-3xl text-sm sm:text-base leading-relaxed text-white/90">
-              A MAD Photo Jam desafia os participantes a desenvolver um projeto
-              fotográfico original em formato intensivo e ao longo de 48h, sobre
-              uma temática que apenas irão conhecer no primeiro dia do evento.
-              Os trabalhos serão apresentados no final das 48 horas no evento e
-              em formato expositivo após o evento.
-            </p>
+            {activeItem.description && (
+              <p className="max-w-3xl text-sm sm:text-base leading-relaxed text-white/90">
+                {activeItem.description}
+              </p>
+            )}
           </section>
 
-          <section className="space-y-8">
-            <h2 className="uppercase tracking-wide text-base sm:text-lg">
-              Modelo de funcionamento
-            </h2>
+          {activeItem.details && activeItem.details.length > 0 && (
+            <section className="space-y-8">
+              <h2 className="uppercase tracking-wide text-base sm:text-lg">
+                Detalhes
+              </h2>
 
-            <div className="divide-y divide-white/20">
-              {[
-                {
-                  title: "Categoria Única",
-                  description:
-                    "Existe apenas uma categoria, independentemente da(s) técnica(s) utilizadas. Cada projeto deve contemplar 10 imagens.",
-                },
-                {
-                  title: "Temática",
-                  description:
-                    "Os participantes desenvolvem os trabalhos sobre uma temática que só vão conhecer no primeiro dia do evento.",
-                },
-                {
-                  title: "Apresentação",
-                  description:
-                    "Os trabalhos são apresentados pelo autor e projetados perante o público 48 horas depois.",
-                },
-                {
-                  title: "Premiação",
-                  description:
-                    "Os 3 melhores classificados serão premiados e serão atribuídas 4 menções honrosas.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="py-6">
-                  <p className="font-medium">{item.title}</p>
-                  <p className="mt-2 text-sm sm:text-base text-white/80">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
+              <div className="divide-y divide-white/20">
+                {activeItem.details.map((detail, index) => (
+                  <div key={index} className="py-6">
+                    <p className="text-sm sm:text-base leading-relaxed text-white/90">
+                      {detail}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       </DialogContent>
     </Dialog>
