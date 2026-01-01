@@ -1,8 +1,10 @@
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "../../../../components/ui/button";
 import ThreeDBackground from "../../3D/Hero3D";
 
-const navigationLinks = [{ label: "BILHETES" }, { label: "VOLUNTARIADO" }];
+const navigationLinks = [
+  { label: "BILHETES", href: "https://docs.google.com/forms/d/e/1FAIpQLSeL_L_VGwe6WE1HWFK90SUtHN6XN0jEfAIQzH1NKw11_xSNNA/closedform" },
+  { label: "VOLUNTARIADO", href: "https://linktr.ee/madjamfest" },
+];
 
 export const FestivalIntroSection = (): JSX.Element => {
   return (
@@ -33,14 +35,16 @@ export const FestivalIntroSection = (): JSX.Element => {
             {/* Navigation */}
             <nav className="flex flex-row gap-2 lg:flex-col lg:w-1/4">
               {navigationLinks.map((link) => (
-                <Button
+                <a
                   key={link.label}
-                  variant="ghost"
-                  className="group flex w-fit items-center gap-3 p-0 text-white hover:bg-transparent"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group text-sm flex w-fit items-center gap-1 rounded-none border-b-2 border-b-transparent p-0 text-white transition-colors hover:bg-transparent hover:border-b-primary hover:text-primary"
                 >
                   <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   <span className="tracking-wide">{link.label}</span>
-                </Button>
+                </a>
               ))}
             </nav>
 

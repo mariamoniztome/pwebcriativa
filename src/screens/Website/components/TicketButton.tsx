@@ -5,7 +5,7 @@ const TICKETS_URL =
 
 const TicketButton = () => {
   return (
-    <div className="flex items-center">
+    <div className="group flex items-center">
       {/* Main pill */}
       <a
         href={TICKETS_URL}
@@ -20,8 +20,8 @@ const TicketButton = () => {
           backdrop-blur-md
           text-white
           border border-white
-          hover:bg-black/60
           transition
+          group-hover:bg-black/60
         "
       >
         Garante os teus bilhetes
@@ -41,8 +41,8 @@ const TicketButton = () => {
           backdrop-blur-md
           border border-white
           text-white
-          hover:bg-black/60
           transition
+          group-hover:bg-black/60
         "
         aria-label="Abrir formulário de bilhetes"
       >
