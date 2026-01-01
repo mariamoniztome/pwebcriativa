@@ -3,6 +3,7 @@ export type JamItem = {
   title: string;
   image: string;
   description: string;
+  category: "PHOTO" | "MOTION" | "GAME" | "ANIMATION";
 };
 
 export type Edition = {
