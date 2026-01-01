@@ -27,7 +27,7 @@ const EditionTile = ({
     >
       {/* Background image */}
       <img
-        src={edition.coverImage}
+        src={edition.image}
         alt={`Edição ${edition.year}`}
         className="
           absolute inset-0 h-full w-full
@@ -41,11 +41,11 @@ const EditionTile = ({
       {/* Year (always visible) */}
       <div
         className="
-          absolute bottom-8 left-1/2
+          absolute bottom-16 left-1/2
           -translate-x-1/2
-          rotate-90
+          -rotate-90
           text-white
-          text-6xl font-light
+          text-7xl font-normal
           tracking-widest
           pointer-events-none
           z-10
