@@ -48,7 +48,7 @@ export const jams: JamItem[] = [
   },
   {
     id: "jam-4",
-    title: "Animation Jam",
+    title: "Animation",
     category: "ANIMATION",
     image: "/fest-7.png",
     description:

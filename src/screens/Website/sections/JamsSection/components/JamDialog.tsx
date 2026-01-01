@@ -40,7 +40,7 @@ export function JamDialog({ children, open, onOpenChange, activeItem }: JamDialo
           </DialogTitle>
         </DialogHeader>
 
-        <div className="mt-12 space-y-12">
+        <div className="border-t-2 pt-4 space-y-6">
           <section className="space-y-4">
             {activeItem.subtitle && (
               <p className="uppercase tracking-wide text-sm sm:text-base">
@@ -62,12 +62,12 @@ export function JamDialog({ children, open, onOpenChange, activeItem }: JamDialo
           </section>
 
           {activeItem.details && activeItem.details.length > 0 && (
-            <section className="space-y-8">
+            <section className="space-y-2">
               <h2 className="uppercase tracking-wide text-base sm:text-lg">
                 Detalhes
               </h2>
 
-              <div className="divide-y divide-white/20">
+              <div className="">
                 {activeItem.details.map((detail, index) => (
                   <div key={index} className="py-6">
                     <p className="text-sm sm:text-base leading-relaxed text-white/90">
