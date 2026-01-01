@@ -7,7 +7,7 @@ export const ParticipationSection = (): JSX.Element => {
     <section className="relative bg-black py-24 px-4">
       <div className="mx-auto  ">
         {/* Divider */}
-        <Separator className="mb-12 bg-white/20" />
+        <Separator className="mb-12 bg-white" />
 
         {/* Title */}
         <h2 className="mb-12 text-[clamp(3rem,8vw,6rem)] font-bold leading-none text-white">
@@ -30,12 +30,12 @@ export const ParticipationSection = (): JSX.Element => {
         >
           <Input
             placeholder="O teu nome"
-            className="h-11"
+            className="h-10"
           />
 
           <Button
             type="submit"
-            className="h-11 rounded-full bg-orange-500 px-6 text-white hover:bg-orange-500/90"
+            className="h-10 rounded-full border-2 border-primary bg-primary px-9 text-white hover:bg-transparent hover:text-primary"
           >
             Inscreve-te
           </Button>

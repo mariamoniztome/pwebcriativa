@@ -4,6 +4,7 @@ import { EditionTile } from "./components/EditionTile";
 import { EditionDialog } from "./components/EditionDialog";
 import editionsData from "./data/data";
 import { Edition } from "../../../../types/types";
+import { Separator } from "../../../../components/ui/separator";
 
 export const PastEditionsSection = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,6 +57,7 @@ export const PastEditionsSection = (): JSX.Element => {
 
   return (
     <section className="relative bg-black py-24 px-4">
+      <Separator className="mb-12 bg-white" />
       <div className="mx-auto  ">
         <h2 className="mb-12 text-[clamp(3rem,8vw,6rem)] font-bold leading-none text-white">
           Edições passadas

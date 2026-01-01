@@ -37,7 +37,7 @@ export const FaqsSection = (): JSX.Element => {
     <section className="relative bg-black py-24 px-4">
       <div className="mx-auto  ">
         {/* Divider */}
-        <Separator className="mb-12 bg-white/20" />
+        <Separator className="mb-12 bg-white" />
 
         <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           {/* Title */}
