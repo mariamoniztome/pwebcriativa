@@ -1,13 +1,13 @@
-import { JamItem } from "../../../../../types/types";
+import { JamItem as JamItemType} from "../../../../../types/types";
 import { useState } from "react";
 import Cursor from "../../../components/Cursor/Cursor";
 
-type GalleryItemProps = {
-  item: JamItem;
-  onOpen: (item: JamItem) => void;
+type JamItemProps = {
+  item: JamItemType;
+  onOpen: (item: JamItemType) => void;
 };
 
-export const GalleryItem = ({ item, onOpen }: GalleryItemProps) => {
+export const JamItem = ({ item, onOpen }: JamItemProps) => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 

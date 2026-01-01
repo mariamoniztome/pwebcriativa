@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { JamItem } from "../../../../types/types";
-import { GalleryItem } from "./components/GalleryItem";
+import { JamItem as JamItemType} from "../../../../types/types";
 import { jams } from "./data/data";
-import { GalleryDialog } from "./components/Dialog";
 import { Separator } from "../../../../components/ui/separator";
+import { JamItem } from "./components/JamItem";
+import { JamDialog } from "./components/JamDialog";
 
 export const JamsGallerySection = (): JSX.Element => {
-  const [activeItem, setActiveItem] = useState<JamItem | null>(null);
+  const [activeItem, setActiveItem] = useState<JamItemType | null>(null);
 
   return (
     <section className="relative bg-black py-24 px-4">
@@ -19,7 +19,7 @@ export const JamsGallerySection = (): JSX.Element => {
         {/* Grid */}
         <div className="grid gap-6 md:grid-cols-2">
           {jams.map((item) => (
-            <GalleryItem
+            <JamItem
               key={item.id}
               item={item}
               onOpen={setActiveItem}
@@ -29,9 +29,9 @@ export const JamsGallerySection = (): JSX.Element => {
       </div>
 
       {/* Dialog */}
-      <GalleryDialog
-        item={activeItem}
-        onClose={() => setActiveItem(null)}
+      <JamDialog
+        open={activeItem !== null}
+        onOpenChange={() => setActiveItem(null)}
       />
     </section>
   );
