@@ -6,9 +6,6 @@ import {
   TARGET_TEXT_LENGTH,
 } from "./constants";
 
-/**
- * Renders text in a circle around the cursor
- */
 export function CircularText({ text }: { text: string }) {
   // Repeat the text to fill the circle
   const normalizedText = text.toUpperCase();
@@ -55,7 +52,7 @@ export function CircularText({ text }: { text: string }) {
             }}
           >
             {char === " " ? (
-              <div className="flex-none h-[33.454px] w-px" />
+              <div className="flex-none h-40 w-px" />
             ) : (
               <CircularCharacter char={char} />
             )}

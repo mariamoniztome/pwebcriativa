@@ -2,13 +2,10 @@ import { CircularText } from "./CircularText";
 import { CursorBackground } from "./CursorBackground";
 
 type CursorProps = {
-  text?: string;
+  text: string;
 };
 
-/**
- * Custom cursor component with circular rotating text
- */
-export default function Cursor({ text = "Open details" }: CursorProps) {
+export default function Cursor({ text }: CursorProps) {
   return (
     <div className="relative size-full" data-name="Cursor">
       <CursorBackground />
