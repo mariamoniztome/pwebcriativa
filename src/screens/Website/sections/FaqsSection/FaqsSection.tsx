@@ -34,7 +34,7 @@ const faqItems = [
 
 export const FaqsSection = (): JSX.Element => {
   return (
-    <section className="relative bg-black py-24 px-4">
+    <section className="relative bg-black h-[470px] pt-24 px-4">
       <div className="mx-auto  ">
         {/* Divider */}
         <Separator className="mb-12 bg-white" />
