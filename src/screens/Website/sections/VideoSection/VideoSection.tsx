@@ -21,9 +21,12 @@ export const VideoSection = (): JSX.Element => {
 
   const handleVideoClick = () => {
     const newMutedState = !isMuted;
+    console.log("Video clicked - current muted:", isMuted, "new muted:", newMutedState);
     setIsMuted(newMutedState);
     if (videoRef.current) {
+      console.log("Setting video muted property to:", newMutedState);
       videoRef.current.muted = newMutedState;
+      console.log("Video muted is now:", videoRef.current.muted);
     }
   };
 
@@ -45,9 +48,9 @@ export const VideoSection = (): JSX.Element => {
         loop
       />
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/40 pointer-events-none" />
 
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <TicketButton />
       </div>
 
