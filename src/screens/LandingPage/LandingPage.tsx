@@ -22,7 +22,7 @@ export const LandingPage = (): JSX.Element => {
 
   return (
     <div className="bg-black overflow-x-hidden w-full min-w-screen-xl relative">
-      <Header onMenuClick={() => setIsMenuOpen(true)} />
+      <Header onMenuClick={() => setIsMenuOpen(true)} isMenuOpen={isMenuOpen} />
       <MainHeroSection />
       <VideoSection />
       <NavigationLinksSection />
@@ -32,7 +32,6 @@ export const LandingPage = (): JSX.Element => {
       <PartnersSection />
       <Footer />
       <ScrollButton />
-      
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-[999999999999999999] bg-[url('/grain.png')]"

@@ -27,18 +27,18 @@ export const EventDaysSection: React.FC<EventDaysSectionProps> = ({
           className="relative w-full h-80 border-b border-border flex items-center justify-between px-12 cursor-pointer group"
         >
           {/* Content */}
-          <div className="flex items-center justify-center font-montreal-bold font-black text-foreground text-9xl leading-tight whitespace-nowrap">
+          <div className="tracking-tighterflex items-center justify-center font-montreal-bold font-black text-foreground text-9xl leading-tight whitespace-nowrap">
             {event.day}
           </div>
 
           {/* Right Side: Date and Arrow */}
-          <div className="flex flex-col items-end gap-4">
+          <div className="flex flex-col items-end gap-10">
             <div className="font-montreal font-normal text-primary text-2xl whitespace-nowrap">
               {event.date}
             </div>
 
-            <div className="w-16 h-16 rounded-full border-2 border-foreground flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-              <ArrowUpRight className="w-8 h-8 text-foreground" strokeWidth={2} />
+            <div className="size-[4rem] rounded-full border-2 border-foreground flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+              <ArrowUpRight className="size-28 text-foreground" strokeWidth={1} />
             </div>
           </div>
 

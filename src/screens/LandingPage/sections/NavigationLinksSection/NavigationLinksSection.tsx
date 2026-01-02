@@ -2,6 +2,16 @@ import { navigationLinks } from "../../../../assets/data/links";
 import img from "../../../../assets/img/fest/fest-4.png";
 
 export const NavigationLinksSection = (): JSX.Element => {
+  const handleLinkClick = (link: typeof navigationLinks[0]) => {
+    if (link.type === 'pdf') {
+      // Open PDF in new tab
+      window.open(link.url, '_blank');
+    } else if (link.type === 'external') {
+      // Open external link in new tab
+      window.open(link.url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <section id="programa" className="relative w-full flex flex-col items-center">
       <div className="relative w-full h-screen">
@@ -18,9 +28,12 @@ export const NavigationLinksSection = (): JSX.Element => {
           {navigationLinks.map((link, index) => (
             <div
               key={index}
-              className="relative w-full max-w-screen-xl h-40 flex items-center justify-start"
+              className="relative w-full max-w-screen-xl h-36 flex items-center justify-start"
             >
-              <button className={`${link.className} text-9xl cursor-pointer hover:underline transition-all duration-300`}>
+              <button 
+                onClick={() => handleLinkClick(link)}
+                className={`${link.className} text-9xl cursor-pointer hover:underline transition-all duration-300`}
+              >
                 {link.text}
               </button>
             </div>
