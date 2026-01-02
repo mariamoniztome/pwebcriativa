@@ -14,5 +14,18 @@ export type Edition = {
   image: string;
   title?: string;
   description?: string;
-  coverImage?: string;
+  gallery?: string[]; 
 };
+
+export interface CurveConfig {
+  curveIntensity: number;
+  rotationY: number;
+  rotationX: number;
+  zoom: number;
+  fov: number;
+  wireframe: boolean;
+  brightness: number;
+  segments: number;
+  speed: number;
+  spacing: number;
+}

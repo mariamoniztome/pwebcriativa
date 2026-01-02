@@ -11,7 +11,7 @@ type EditionWrapperProps = {
 export function EditionWrapper({
   title = "MAD JAM FEST",
   description = "Experimente o pulso da criatividade com uma jornada eletrizante pela experimentação artística e digital. De ritmos visuais a performances hipnóticas, este não é um festival comum—é um playground para inovadores criativos.",
-  buttonText = "Galeria",
+  buttonText = "Ver mais",
   onButtonClick,
 }: EditionWrapperProps) {
   return (

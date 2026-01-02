@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { EditionTile } from "./components/EditionTile";
-import { EditionDialog } from "./components/EditionDialog";
-import editionsData from "./data/data";
+import editionsData from "./data/editionsData";
 import { Edition } from "../../../../types/types";
 import { Separator } from "../../../../components/ui/separator";
+import { EditionDialog } from "./components/EditionDialog";
 
 export const PastEditionsSection = (): JSX.Element => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,7 @@ export const PastEditionsSection = (): JSX.Element => {
 
     tiles.forEach((tile, i) => {
       gsap.set(tile, {
-        width: i === activeIndex ? 500 : 120,
+        width: i === activeIndex ? 600 : 120,
         zIndex: i === activeIndex ? 10 : 1,
       });
     });
@@ -79,7 +79,6 @@ export const PastEditionsSection = (): JSX.Element => {
         </div>
       </div>
 
-      {/* ONE shared dialog */}
       <EditionDialog
         edition={activeEdition}
         onClose={() => setActiveEdition(null)}

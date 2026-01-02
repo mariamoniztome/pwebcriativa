@@ -42,7 +42,7 @@ const EditionTile = ({
       {/* Year (always visible) */}
       <div
         className="
-          absolute bottom-16 left-1/2
+          absolute bottom-16 left-12
           -translate-x-1/2
           -rotate-90
           text-white
@@ -60,8 +60,8 @@ const EditionTile = ({
         className="
           edition-content
           absolute inset-0 z-20
-          flex items-center justify-center
-          opacity-0
+          flex items-center justify-end
+          opacity-0 px-2
         "
       >
         <EditionWrapper />

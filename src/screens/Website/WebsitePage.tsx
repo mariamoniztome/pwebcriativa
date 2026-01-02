@@ -26,7 +26,7 @@ export const WebsitePage = (): JSX.Element => {
       </main>
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-50 bg-[url('/grain.png')]"
+        className="pointer-events-none fixed inset-0 z-[999999999999999999] bg-[url('/grain.png')]"
       />
     </>
   );
