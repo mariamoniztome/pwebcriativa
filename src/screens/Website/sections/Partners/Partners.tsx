@@ -1,18 +1,30 @@
 import { Separator } from "../../../../components/ui/separator";
+import partner1 from "../../../../assets/img/partners/partner-1.png";
+import partner2 from "../../../../assets/img/partners/partner-2.png";
+import partner3 from "../../../../assets/img/partners/partner-3.png";
+import partner4 from "../../../../assets/img/partners/partner-4.png";
+import partner5 from "../../../../assets/img/partners/partner-5.png";
+import partner6 from "../../../../assets/img/partners/partner-6.png";
+import partner7 from "../../../../assets/img/partners/partner-7.png";
+import partner8 from "../../../../assets/img/partners/partner-8.png";
+import partner9 from "../../../../assets/img/partners/partner-9.png";
+import partner10 from "../../../../assets/img/partners/partner-10.png";
+import partner11 from "../../../../assets/img/partners/partner-11.png";
+import partner12 from "../../../../assets/img/partners/partner-12.png";
 
 const partnerLogos = [
-  { src: "/partner-8.png", alt: "Partner logo" },
-  { src: "/partner-7.png", alt: "Partner logo" },
-  { src: "/partner-1.png", alt: "Partner logo" },
-  { src: "/partner-2.png", alt: "Partner logo" },
-  { src: "/partner-11.png", alt: "Partner logo" },
-  { src: "/partner-9.png", alt: "Partner logo" },
-  { src: "/partner-3.png", alt: "Partner logo" },
-  { src: "/partner-6.png", alt: "Partner logo" },
-  { src: "/partner-4.png", alt: "Partner logo" },
-  { src: "/partner-5.png", alt: "Partner logo" },
-  { src: "/partner-10.png", alt: "Partner logo" },
-  { src: "/partner-12.png", alt: "Partner logo" },
+  { src: partner8, alt: "Partner logo" },
+  { src: partner7, alt: "Partner logo" },
+  { src: partner1, alt: "Partner logo" },
+  { src: partner2, alt: "Partner logo" },
+  { src: partner11, alt: "Partner logo" },
+  { src: partner9, alt: "Partner logo" },
+  { src: partner3, alt: "Partner logo" },
+  { src: partner6, alt: "Partner logo" },
+  { src: partner4, alt: "Partner logo" },
+  { src: partner5, alt: "Partner logo" },
+  { src: partner10, alt: "Partner logo" },
+  { src: partner12, alt: "Partner logo" },
 ];
 
 export const Partners = (): JSX.Element => {

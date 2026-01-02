@@ -297,10 +297,6 @@ body::-webkit-scrollbar {
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   html,
   body {
     margin: 0;

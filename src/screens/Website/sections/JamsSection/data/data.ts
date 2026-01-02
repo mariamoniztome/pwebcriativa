@@ -1,11 +1,15 @@
 import { JamItem } from "../../../../../types/types";
+import fest9 from "../../../../../assets/img/fest/fest-9.png";
+import fest8 from "../../../../../assets/img/fest/fest-8.png";
+import fest6 from "../../../../../assets/img/fest/fest-6.png";
+import fest7 from "../../../../../assets/img/fest/fest-7.png";
 
 export const jams: JamItem[] = [
   {
     id: "jam-1",
     title: "Photo Jam",
     category: "PHOTO",
-    image: "/fest-9.png",
+    image: fest9,
     description:
       "An open collaborative jam with musicians and digital artists.",
     subtitle: "Projeto Fotográfico Intensivo",
@@ -20,7 +24,7 @@ export const jams: JamItem[] = [
     id: "jam-2",
     title: "Motion Jam",
     category: "MOTION",
-    image: "/fest-8.png",
+    image: fest8,
     description:
       "Visual experimentation combining illustration and generative code.",
     subtitle: "Motion Graphics Workshop",
@@ -35,7 +39,7 @@ export const jams: JamItem[] = [
     id: "jam-3",
     title: "Game Jam",
     category: "GAME",
-    image: "/fest-6.png",
+    image: fest6,
     description:
       "Hands-on sound exploration with modular and digital tools.",
     subtitle: "Game Development Sprint",
@@ -50,7 +54,7 @@ export const jams: JamItem[] = [
     id: "jam-4",
     title: "Animation",
     category: "ANIMATION",
-    image: "/fest-7.png",
+    image: fest7,
     description:
       "Rapid prototyping of interactive experiences.",
     subtitle: "Animação Digital Lab",

@@ -1,16 +1,25 @@
 import { useEffect, useRef } from "react";
+import fest1 from "../../../../../assets/img/fest/fest-1.png";
+import fest2 from "../../../../../assets/img/fest/fest-2.png";
+import fest3 from "../../../../../assets/img/fest/fest-3.png";
+import fest4 from "../../../../../assets/img/fest/fest-4.png";
+import fest5 from "../../../../../assets/img/fest/fest-5.png";
+import fest6 from "../../../../../assets/img/fest/fest-6.png";
+import fest7 from "../../../../../assets/img/fest/fest-7.png";
+import fest8 from "../../../../../assets/img/fest/fest-8.png";
+import fest9 from "../../../../../assets/img/fest/fest-9.png";
 import gsap from "gsap";
 
 const images = [
-  "/fest-1.png",
-  "/fest-2.png",
-  "/fest-3.png",
-  "/fest-4.png",
-  "/fest-5.png",
-  "/fest-6.png",
-  "/fest-7.png",
-  "/fest-8.png",
-  "/fest-9.png",
+  fest1,
+  fest2,
+  fest3,
+  fest4,
+  fest5,
+  fest6,
+  fest7,
+  fest8,
+  fest9,
 ];
 
 export const WaveImageScroll = () => {
