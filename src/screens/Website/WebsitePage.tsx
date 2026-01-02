@@ -9,12 +9,10 @@ import { FestivalIntroSection } from "./sections/FestivalIntroSection";
 import { PastEditionsSection } from "./sections/PastEditionsSection";
 import { JamsGallerySection } from "./sections/JamsSection";
 
-
-export const App = (): JSX.Element => {
+export const WebsitePage = (): JSX.Element => {
   return (
     <>
       <Header />
-
       <main>
         <FestivalIntroSection />
         <Banner />
@@ -26,7 +24,6 @@ export const App = (): JSX.Element => {
         <Partners />
         <Footer />
       </main>
-
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-50 bg-[url('/grain.png')]"

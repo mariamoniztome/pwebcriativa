@@ -18,7 +18,7 @@ export const Footer = (): JSX.Element => {
     <footer className="relative bg-black pt-24 pb-4">
       <div className="mx-auto px-6">
         {/* Top section */}
-        <div className="mx-auto flex flex-col gap-80 lg:flex-row lg:items-center">
+        <div className="mx-auto flex flex-col md:gap-10 lg:gap-80 lg:flex-row lg:items-center">
           {/* Contact */}
           <div className="space-y-2 text-sm font-bold text-white">
             {contactInfo.map((item) => (
