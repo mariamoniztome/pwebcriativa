@@ -21,12 +21,13 @@ export const ParticipationSection = (): JSX.Element => {
         <h2 className="mb-12 text-[clamp(3rem,8vw,6rem)] font-bold leading-none text-white">
           Participa
         </h2>
+        <div className="rotate-[-2deg] mb-4">
 
         <CurvedImage 
           images={[fest1, fest2, fest3, fest4, fest5, fest6, fest7, fest8, fest9]} 
-          config={{ curveIntensity: -0.19, rotationY: 0, rotationX: 0, zoom: 0.53, fov: 75, wireframe: false, brightness: 1, segments: 10, speed: 0.006, spacing: 8.4 }} 
+          config={{ curveIntensity: -0.008, rotationY: 0, rotationX: 0, zoom: 1, fov: 60, wireframe: false, brightness: 1, segments: 10, speed: 0.006, spacing: 8.4 }} 
         />
-          
+          </div>
         <form
           onSubmit={(e) => e.preventDefault()}
           className="mx-auto flex max-w-xl flex-col gap-4 sm:flex-row"

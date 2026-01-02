@@ -29,7 +29,18 @@ export const CurvedImage: React.FC<GalleryProps> = ({ images, config }) => {
     sceneRef.current = scene;
 
     // Câmera com FOV solicitado, mas posicionada para capturar a largura maior
-    const camera = new THREE.PerspectiveCamera(config.fov, 1, 0.1, 1000);
+const width = mountRef.current.clientWidth;
+const height = mountRef.current.clientHeight;
+
+const camera = new THREE.PerspectiveCamera(
+  config.fov,
+  width / height,
+  0.1,
+  1000
+);
+camera.position.z = 10;
+cameraRef.current = camera;
+
     camera.position.z = 10; 
     cameraRef.current = camera;
 
@@ -40,8 +51,7 @@ export const CurvedImage: React.FC<GalleryProps> = ({ images, config }) => {
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     
-    const width = mountRef.current.clientWidth || window.innerWidth;
-    const height = mountRef.current.clientHeight || window.innerHeight;
+ 
     renderer.setSize(width, height);
     mountRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
@@ -116,7 +126,7 @@ export const CurvedImage: React.FC<GalleryProps> = ({ images, config }) => {
       if (groupRef.current) {
         groupRef.current.rotation.y = THREE.MathUtils.degToRad(c.rotationY);
         groupRef.current.rotation.x = THREE.MathUtils.degToRad(c.rotationX);
-        groupRef.current.scale.setScalar(c.zoom);
+        groupRef.current.scale.setScalar(1 + c.zoom);
 
         const totalWidth = images.length * c.spacing;
         
@@ -170,5 +180,6 @@ export const CurvedImage: React.FC<GalleryProps> = ({ images, config }) => {
     };
   }, [images.length, config.segments, config.spacing]);
 
-  return <div ref={mountRef} className="relative bg-black" />;
+  return <div ref={mountRef}  className="relative bg-black w-full h-[500px] "
+ />;
 };
