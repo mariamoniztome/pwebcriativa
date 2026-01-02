@@ -4,34 +4,35 @@ import { useState } from "react";
 import fest1 from "../../../../assets/img/fest/fest-1.png";
 import fest2 from "../../../../assets/img/fest/fest-2.png";
 import fest3 from "../../../../assets/img/fest/fest-3.png";
+import EventDayDialog from "./components/EventDayDialog";
 
-interface EventDaysSectionProps {
-  onDayClick: (day: string, date: string) => void;
-}
 
 const festImages = [fest1, fest2, fest3];
 
-export const EventDaysSection: React.FC<EventDaysSectionProps> = ({
-  onDayClick,
-}) => {
+export const EventDaysSection: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
-    <section className="flex flex-col w-full relative">
+    <>
+    <section className="flex flex-col w-full relative overflow-visible">
       {eventDays.map((event, index) => (
         <div
           key={index}
-          onClick={() => onDayClick(event.day, event.date)}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
-          className="relative w-full h-80 border-b border-border flex items-center justify-between px-12 cursor-pointer group"
+          onClick={() => {
+            setSelectedIndex(index);
+            setIsDialogOpen(true);
+          }}
+          className="relative w-full h-80 border-b border-border flex items-center justify-between px-12 cursor-pointer group overflow-visible"
         >
           {/* Content */}
           <div className="tracking-tighterflex items-center justify-center font-montreal-bold font-black text-foreground text-9xl leading-tight whitespace-nowrap">
             {event.day}
           </div>
 
-          {/* Right Side: Date and Arrow */}
           <div className="flex flex-col items-end gap-10">
             <div className="font-montreal font-normal text-primary text-2xl whitespace-nowrap">
               {event.date}
@@ -44,10 +45,10 @@ export const EventDaysSection: React.FC<EventDaysSectionProps> = ({
 
           {/* Hover Image - Positioned to the right outside */}
           <div
-            className="absolute right-0 top-0 h-full w-[600px] transition-all duration-500 pointer-events-none overflow-hidden"
+            className="absolute z-50 right-96 top-0 h-full w-[600px] transition-all duration-500 pointer-events-none"
             style={{
               opacity: hoveredIndex === index ? 1 : 0,
-              transform: hoveredIndex === index ? 'translateX(100%)' : 'translateX(calc(100% + 50px))',
+              transform: hoveredIndex === index ? 'translateX(0)' : 'translateX(50px)',
             }}
           >
             <img
@@ -59,5 +60,12 @@ export const EventDaysSection: React.FC<EventDaysSectionProps> = ({
         </div>
       ))}
     </section>
+    <EventDayDialog 
+      selectedIndex={selectedIndex}
+      eventDays={eventDays}
+      isOpen={isDialogOpen}
+      onOpenChange={setIsDialogOpen}
+    />
+    </>
   );
 };

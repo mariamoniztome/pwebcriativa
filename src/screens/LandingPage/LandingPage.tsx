@@ -12,13 +12,6 @@ import { ImageSection } from "./sections/ImageSection/ImageSection";
 
 export const LandingPage = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [selectedDay, setSelectedDay] = useState({ day: "", date: "" });
-
-  const handleDayClick = (day: string, date: string) => {
-    setSelectedDay({ day, date });
-    setIsDialogOpen(true);
-  };
 
   return (
     <div className="bg-black overflow-x-hidden w-full min-w-screen-xl relative">
@@ -26,7 +19,7 @@ export const LandingPage = (): JSX.Element => {
       <MainHeroSection />
       <VideoSection />
       <NavigationLinksSection />
-      <EventDaysSection onDayClick={handleDayClick} />
+      <EventDaysSection />
       <ImageSection />
       <AnnouncementMarqueeSection />
       <PartnersSection />

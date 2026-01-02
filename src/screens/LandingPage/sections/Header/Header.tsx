@@ -1,5 +1,3 @@
-import { Button } from "../../../../components/ui/button";
-import { Menu } from "lucide-react";
 type HeaderProps = {
   onMenuClick: () => void;
   isMenuOpen?: boolean;
