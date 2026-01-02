@@ -4,6 +4,7 @@ import { EditionWrapper } from "./EditionWrapper";
 type EditionTileProps = {
   edition: Edition;
   index: number;
+  isActive: boolean;
   onHover: (index: number) => void;
   onOpenDialog: (edition: Edition) => void;
 };
@@ -11,6 +12,7 @@ type EditionTileProps = {
 const EditionTile = ({
   edition,
   index,
+  isActive,
   onHover,
   onOpenDialog,
 }: EditionTileProps) => {
@@ -22,7 +24,12 @@ const EditionTile = ({
         overflow-hidden
         cursor-pointer
         bg-black
+        transition-all duration-500 ease-out
       "
+      style={{
+        width: isActive ? '500px' : '120px',
+        zIndex: isActive ? 10 : 1,
+      }}
       onMouseEnter={() => onHover(index)}
       onClick={() => onOpenDialog(edition)}
     >
@@ -61,8 +68,13 @@ const EditionTile = ({
           edition-content
           absolute inset-0 z-20
           flex items-center justify-end
-          opacity-0 px-2
+          px-2
+          transition-opacity duration-300
         "
+        style={{
+          opacity: isActive ? 1 : 0,
+          transitionDelay: isActive ? '200ms' : '0ms'
+        }}
       >
         <EditionWrapper />
       </div>
