@@ -8,7 +8,7 @@ const navigationLinks = [
 
 export const FestivalIntroSection = (): JSX.Element => {
   return (
-    <section className="relative min-h-screen w-full overflow-hidden bg-black">
+    <section className="relative min-h-screen w-full overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <ThreeDBackground />
@@ -40,7 +40,7 @@ export const FestivalIntroSection = (): JSX.Element => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group text-sm flex w-fit items-center gap-1 rounded-none border-b-2 border-b-transparent p-0 text-white transition-colors hover:bg-transparent hover:border-b-primary hover:text-primary"
+                  className="group text-sm flex w-fit items-center gap-1 rounded-none border-b-2 border-b-white/0 p-0 text-white transition-colors hover:bg-transparent hover:border-b-primary hover:text-primary"
                 >
                   <ArrowUpRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                   <span className="tracking-wide">{link.label}</span>

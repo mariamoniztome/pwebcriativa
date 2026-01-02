@@ -1,4 +1,5 @@
 import { Edition } from "../../../../../types/types";
+import { EditionWrapper } from "./EditionWrapper";
 
 type EditionTileProps = {
   edition: Edition;
@@ -63,18 +64,7 @@ const EditionTile = ({
           opacity-0
         "
       >
-        <span
-          className="
-            rounded-full
-            border border-white/40
-            px-6 py-2
-            text-white
-            backdrop-blur
-            text-sm
-          "
-        >
-          Galeria
-        </span>
+        <EditionWrapper />
       </div>
     </div>
   );

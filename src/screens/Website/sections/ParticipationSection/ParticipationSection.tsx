@@ -22,7 +22,7 @@ export const ParticipationSection = (): JSX.Element => {
 
           <Button
             type="submit"
-            className="h-10 rounded-full border-2 border-primary bg-primary px-9 text-white hover:bg-transparent hover:text-primary"
+            className="h-10 rounded-full border-2 border-primary bg-primary px-9 text-white hover:bg-black hover:text-primary"
           >
             Inscreve-te
           </Button>
