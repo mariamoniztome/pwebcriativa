@@ -8,6 +8,8 @@ import { AnnouncementMarqueeSection } from "./sections/AnnouncementMarqueeSectio
 import { VideoSection } from "./sections/VideoSection/VideoSection";
 import { Footer } from "./sections/Footer/Footer";
 import { PartnersSection } from "./sections/PartnersSection/PartnersSection";
+import { ImageSection } from "./sections/ImageSection/ImageSection";
+
 export const LandingPage = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -25,6 +27,7 @@ export const LandingPage = (): JSX.Element => {
       <VideoSection />
       <NavigationLinksSection />
       <EventDaysSection onDayClick={handleDayClick} />
+      <ImageSection />
       <AnnouncementMarqueeSection />
       <PartnersSection />
       <Footer />

@@ -12,7 +12,7 @@ export const Header = ({ onMenuClick }: HeaderProps): JSX.Element => {
 
       {/* Date */}
       <div className="text-xl font-normal text-foreground">
-        23–27 de fevereiro
+        25–27 de fevereiro
       </div>
 
       {/* Menu */}
