@@ -50,7 +50,7 @@ export const VideoSection = (): JSX.Element => {
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 pointer-events-none" />
 
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-auto">
         <TicketButton />
       </div>
 
