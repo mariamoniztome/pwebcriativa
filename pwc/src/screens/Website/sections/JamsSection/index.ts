@@ -1,0 +1,1 @@
+export { JamsGallerySection } from "./JamsGallerySection";
