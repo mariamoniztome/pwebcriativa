@@ -15,6 +15,7 @@ export type Edition = {
   title?: string;
   description?: string;
   gallery?: string[]; 
+  
 };
 
 export interface CurveConfig {
