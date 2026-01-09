@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ScrollButton } from "../../components/ScrollButton/ScrollButton";
 import { Header } from "./sections/Header/Header";
+import { Menu } from "./sections/Header/Menu";
 import { MainHeroSection } from "./sections/MainHeroSection/MainHeroSection";
 import { NavigationLinksSection } from "./sections/NavigationLinksSection/NavigationLinksSection";
 import { EventDaysSection } from "./sections/EventDaysSection/EventDaysSection";
@@ -15,7 +16,8 @@ export const LandingPage = (): JSX.Element => {
 
   return (
     <div className="bg-black overflow-x-hidden w-full min-w-screen-xl relative">
-      <Header onMenuClick={() => setIsMenuOpen(true)} isMenuOpen={isMenuOpen} />
+      <Header onMenuClick={() => setIsMenuOpen(!isMenuOpen)} isMenuOpen={isMenuOpen} />
+      <Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       <MainHeroSection />
       <VideoSection />
       <NavigationLinksSection />

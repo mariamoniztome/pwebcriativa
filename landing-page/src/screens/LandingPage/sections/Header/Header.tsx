@@ -17,7 +17,7 @@ export const Header = ({ onMenuClick, isMenuOpen = false }: HeaderProps): JSX.El
       {/* Hamburger Menu */}
       <button
         onClick={onMenuClick}
-        className="flex flex-col gap-2 p-4 cursor-pointer hover:opacity-70 transition-opacity"
+        className="flex flex-col gap-2 p-4 hover:opacity-70 transition-opacity z-[102] relative"
         aria-label="Toggle menu"
       >
         <span
