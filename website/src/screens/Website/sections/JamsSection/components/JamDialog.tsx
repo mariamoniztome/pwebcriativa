@@ -7,6 +7,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../../../../../components/ui/dialog";
+import { Separator } from "../../../../../components/ui/separator";
 
 type JamDialogProps = {
   children?: React.ReactNode;
@@ -34,22 +35,22 @@ export function JamDialog({ children, open, onOpenChange, activeItem }: JamDialo
       {children && <DialogTrigger asChild>{children}</DialogTrigger>}
 
       <DialogContent>
-        <DialogHeader>
+        <DialogHeader className="p-0 m-0 h-52">
           <DialogTitle>
             {activeItem.title.toUpperCase()}
           </DialogTitle>
         </DialogHeader>
 
-        <div className="border-t-2 pt-4 space-y-6">
-          <section className="space-y-4">
+        <div className="border-t-2 border-white/40 pt-4 space-y-6">
+          <section className="space-y-2">
             {activeItem.subtitle && (
-              <p className="uppercase tracking-wide text-sm sm:text-base">
+              <p className="uppercase tracking-wide text-lg font-semibold">
                 {activeItem.subtitle}
               </p>
             )}
 
             {activeItem.duration && (
-              <p className="uppercase tracking-wide text-sm sm:text-base">
+              <p className="uppercase tracking-wide text-md font-regular">
                 {activeItem.duration}
               </p>
             )}
@@ -63,16 +64,18 @@ export function JamDialog({ children, open, onOpenChange, activeItem }: JamDialo
 
           {activeItem.details && activeItem.details.length > 0 && (
             <section className="space-y-2">
-              <h2 className="uppercase tracking-wide text-base sm:text-lg">
+              <h2 className="uppercase tracking-wide text-xl font-semibold">
                 Detalhes
               </h2>
 
               <div className="">
                 {activeItem.details.map((detail, index) => (
-                  <div key={index} className="py-6">
-                    <p className="text-sm sm:text-base leading-relaxed text-white/90">
+                  <div key={index} className="py-2">
+                    <p className="text-lg font-semibold">Titulo</p>
+                    <p className="text-sm leading-relaxed text-white/90">
                       {detail}
                     </p>
+                    <Separator className="mt-3 bg-white/40" />
                   </div>
                 ))}
               </div>
