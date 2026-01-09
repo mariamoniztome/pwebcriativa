@@ -20,8 +20,10 @@ export type Edition = {
   image: string;
   title?: string;
   description?: string;
-  gallery?: string[]; 
-  
+  gallery?: string[];
+  winners?: Array<{ title: string; description: string }>;
+  partners?: Array<{ name: string; description: string }>;
+  prizes?: Array<{ title: string; description: string }>;
 };
 
 export interface CurveConfig {

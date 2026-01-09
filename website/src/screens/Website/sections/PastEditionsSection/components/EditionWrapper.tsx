@@ -23,9 +23,11 @@ export function EditionWrapper({
 
         <Separator className="mb-2 bg-white" />
 
-        <p className="font-neue-montreal text-white/90 leading-7 mb-5 text-sm">
-          {description}
-        </p>
+        {description && (
+          <p className="font-neue-montreal text-white/90 leading-7 mb-5 text-sm">
+            {description}
+          </p>
+        )}
 
         <Button
           onClick={onButtonClick}

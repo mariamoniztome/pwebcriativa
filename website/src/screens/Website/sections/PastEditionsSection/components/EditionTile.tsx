@@ -76,7 +76,12 @@ const EditionTile = ({
           transitionDelay: isActive ? '200ms' : '0ms'
         }}
       >
-        <EditionWrapper />
+        <EditionWrapper
+          title={edition.title ?? `MAD JAM FEST ${edition.year}`}
+          description={edition.description}
+          buttonText="Ver edição"
+          onButtonClick={() => onOpenDialog(edition)}
+        />
       </div>
     </div>
   );
