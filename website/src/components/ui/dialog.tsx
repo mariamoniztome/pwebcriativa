@@ -56,12 +56,12 @@ const DialogContent = React.forwardRef<
       ref={ref}
       data-slot="dialog-content"
       className={cn(
-        "fixed top-1/2 left-1/2 z-50 grid w-[calc(100%-20rem)] max-w-[1400px] max-h-[90vh] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-2xl p-8 bg-white text-black shadow-2xl overflow-y-auto no-scrollbar duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95", className
+        "fixed top-1/2 left-1/2 z-50 grid w-[calc(100%-20rem)] max-w-[1400px] max-h-[90vh] -translate-x-1/2 -translate-y-1/2 gap-6 rounded-2xl p-8 bg-black text-white shadow-2xl overflow-y-auto custom-scrollbar duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[state=open]:zoom-in-95 data-[state=closed]:zoom-out-95", className
       )}
       {...props}
     >
       {children}
-      <DialogPrimitive.Close className="ring-offset-white text-white hover:text-black focus:ring-ring absolute top-6 right-6 rounded-full p-2 opacity-70 transition-all hover:opacity-100 hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
+      <DialogPrimitive.Close className="ring-offset-white text-white hover:text-black hover:bg-white focus:ring-ring absolute top-6 right-6 rounded-full p-2 opacity-70 transition-all hover:opacity-100 hover:bg-gray-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-5">
         <XIcon />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
