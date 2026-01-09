@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Linkedin, X } from 'lucide-react';
+import { Instagram, Facebook, Linkedin } from 'lucide-react';
 
 type MenuProps = {
   isOpen: boolean;
@@ -23,7 +23,7 @@ export const Menu = ({ isOpen, onClose }: MenuProps): JSX.Element => {
     <>
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/95 backdrop-blur-sm z-[100] transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black z-[100] transition-opacity duration-300 ${
           isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         onClick={onClose}
@@ -35,23 +35,15 @@ export const Menu = ({ isOpen, onClose }: MenuProps): JSX.Element => {
           isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
         }`}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-8 right-8 p-2 hover:opacity-70 transition-opacity"
-          aria-label="Close menu"
-        >
-          <X className="w-8 h-8 text-white" strokeWidth={2} />
-        </button>
 
         {/* Navigation Links */}
-        <nav className="flex flex-col items-center gap-6 mb-16">
+        <nav className="flex flex-col items-center gap-2 mb-20">
           {menuItems.map((item, index) => (
             <a
               key={index}
               href={item.href}
               onClick={onClose}
-              className="text-white text-4xl md:text-5xl font-normal hover:opacity-70 transition-opacity"
+              className="text-white text-2xl md:text-4xl font-normal hover:underline transition-opacity"
             >
               {item.label}
             </a>
@@ -66,7 +58,7 @@ export const Menu = ({ isOpen, onClose }: MenuProps): JSX.Element => {
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:opacity-70 transition-opacity"
+              className="hover:underline"
               aria-label={social.label}
             >
               <social.icon className="w-6 h-6 text-white" />
