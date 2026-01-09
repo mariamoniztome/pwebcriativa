@@ -1,3 +1,8 @@
+export type JamDetail = {
+  title: string;
+  description: string;
+};
+
 export type JamItem = {
   id: string;
   title: string;
@@ -6,7 +11,8 @@ export type JamItem = {
   category: "PHOTO" | "MOTION" | "GAME" | "ANIMATION";
   subtitle?: string;
   duration?: string;
-  details?: string[];
+  // Supports legacy string[] and new structured details
+  details?: Array<string | JamDetail>;
 };
 
 export type Edition = {

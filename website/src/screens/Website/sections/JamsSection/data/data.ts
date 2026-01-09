@@ -11,13 +11,14 @@ export const jams: JamItem[] = [
     category: "PHOTO",
     image: fest9,
     description:
-      "An open collaborative jam with musicians and digital artists.",
+      "A MAD Photo Jam desafia os participantes a desenvolver um projeto fotográfico original em formato intensivo e ao longo de 48h, sobre uma temática que apenas irão conhecer no primeiro dia do evento. Os trabalhos serão apresentados no final das 48 horas no evento e em formato expositivo após o evento.",
     subtitle: "Projeto Fotográfico Intensivo",
     duration: "48 horas de captura criativa",
     details: [
-      "A MAD Photo Jam desafia os participantes a desenvolver um projeto fotográfico original em formato intensivo e ao longo de 48h, sobre uma temática que apenas irão conhecer no primeiro dia do evento.",
-      "Os trabalhos serão apresentados no final das 48 horas no evento e em formato expositivo após o evento.",
-      "Modelo de funcionamento: Briefing inicial > Desenvolvimento > Apresentação Final",
+      { title: "Categoria Única", description: "Existe apenas uma categoria, independentemente da(s) técnica(s) utilizadas. Cada Projeto deve contemplar 10 imagens." },
+      { title: "Temática", description: "Os participantes desenvolvem os trabalhos sobre uma temática que só vão conhecer no primeiro dia do evento." },
+      { title: "Apresentação", description: "Os trabalhos são apresentados pelo autor e projetados perante o público 48 horas depois. Os participantes devem ser autónomos no equipamento necessário para o desenvolvimento dos conteúdos." },
+      { title: "Premiação", description: "A apresentação dos trabalhos após as 48 horas será projetada e sujeita a avaliação, onde os 3 melhores classificados serão premiados além de ser atribuído 4 menções honrosas para equipas não premiadas." },
     ],
   },
   {
@@ -26,13 +27,14 @@ export const jams: JamItem[] = [
     category: "MOTION",
     image: fest8,
     description:
-      "Visual experimentation combining illustration and generative code.",
-    subtitle: "Motion Graphics Workshop",
+      "A MAD Photo Jam desafia os participantes a desenvolver um projeto fotográfico original em formato intensivo e ao longo de 48h, sobre uma temática que apenas irão conhecer no primeiro dia do evento. Os trabalhos serão apresentados no final das 48 horas no evento e em formato expositivo após o evento.",
+    subtitle: "Workshop de Motion Graphics",
     duration: "36 horas de criação contínua",
     details: [
-      "Crie animações visuais originais usando técnicas de motion graphics e design dinâmico.",
-      "Trabalhe com software profissional e ferramentas de animação.",
-      "Collaborate com designers e animadores para desenvolver conceitos inovadores.",
+      { title: "Categoria Única", description: "Existe apenas uma categoria, independentemente da(s) técnica(s) utilizadas. Cada Projeto deve contemplar 10 imagens." },
+      { title: "Temática", description: "Os participantes desenvolvem os trabalhos sobre uma temática que só vão conhecer no primeiro dia do evento." },
+      { title: "Apresentação", description: "Os trabalhos são apresentados pelo autor e projetados perante o público 48 horas depois. Os participantes devem ser autónomos no equipamento necessário para o desenvolvimento dos conteúdos." },
+      { title: "Premiação", description: "A apresentação dos trabalhos após as 48 horas será projetada e sujeita a avaliação, onde os 3 melhores classificados serão premiados além de ser atribuído 4 menções honrosas para equipas não premiadas." },
     ],
   },
   {
@@ -41,13 +43,14 @@ export const jams: JamItem[] = [
     category: "GAME",
     image: fest6,
     description:
-      "Hands-on sound exploration with modular and digital tools.",
-    subtitle: "Game Development Sprint",
+      "A MAD Photo Jam desafia os participantes a desenvolver um projeto fotográfico original em formato intensivo e ao longo de 48h, sobre uma temática que apenas irão conhecer no primeiro dia do evento. Os trabalhos serão apresentados no final das 48 horas no evento e em formato expositivo após o evento.",
+    subtitle: "Sprint de Desenvolvimento de Jogos",
     duration: "48 horas de desenvolvimento",
     details: [
-      "Desenvolva protótipos de jogos com foco em gameplay e mecânicas inovadoras.",
-      "Acesso a engines populares como Unity e Godot.",
-      "Orientação de game designers experientes durante todo o processo.",
+      { title: "Categoria Única", description: "Existe apenas uma categoria, independentemente da(s) técnica(s) utilizadas. Cada Projeto deve contemplar 10 imagens." },
+      { title: "Temática", description: "Os participantes desenvolvem os trabalhos sobre uma temática que só vão conhecer no primeiro dia do evento." },
+      { title: "Apresentação", description: "Os trabalhos são apresentados pelo autor e projetados perante o público 48 horas depois. Os participantes devem ser autónomos no equipamento necessário para o desenvolvimento dos conteúdos." },
+      { title: "Premiação", description: "A apresentação dos trabalhos após as 48 horas será projetada e sujeita a avaliação, onde os 3 melhores classificados serão premiados além de ser atribuído 4 menções honrosas para equipas não premiadas." },
     ],
   },
   {
@@ -56,13 +59,14 @@ export const jams: JamItem[] = [
     category: "ANIMATION",
     image: fest7,
     description:
-      "Rapid prototyping of interactive experiences.",
-    subtitle: "Animação Digital Lab",
+      "A MAD Photo Jam desafia os participantes a desenvolver um projeto fotográfico original em formato intensivo e ao longo de 48h, sobre uma temática que apenas irão conhecer no primeiro dia do evento. Os trabalhos serão apresentados no final das 48 horas no evento e em formato expositivo após o evento.",
+    subtitle: "Laboratório de Animação Digital",
     duration: "3 dias de experimentação",
     details: [
-      "Explore técnicas avançadas de animação 2D e 3D.",
-      "Trabalhe com software profissional (Blender, After Effects, etc).",
-      "Crie portfolios com trabalhos de alta qualidade durante o evento.",
+      { title: "Categoria Única", description: "Existe apenas uma categoria, independentemente da(s) técnica(s) utilizadas. Cada Projeto deve contemplar 10 imagens." },
+      { title: "Temática", description: "Os participantes desenvolvem os trabalhos sobre uma temática que só vão conhecer no primeiro dia do evento." },
+      { title: "Apresentação", description: "Os trabalhos são apresentados pelo autor e projetados perante o público 48 horas depois. Os participantes devem ser autónomos no equipamento necessário para o desenvolvimento dos conteúdos." },
+      { title: "Premiação", description: "A apresentação dos trabalhos após as 48 horas será projetada e sujeita a avaliação, onde os 3 melhores classificados serão premiados além de ser atribuído 4 menções honrosas para equipas não premiadas." },
     ],
   },
 ];

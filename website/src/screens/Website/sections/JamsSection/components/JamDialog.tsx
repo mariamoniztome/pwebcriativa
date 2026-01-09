@@ -1,5 +1,5 @@
 import * as React from "react";
-import { JamItem } from "../../../../../types/types";
+import { JamItem, JamDetail } from "../../../../../types/types";
 import {
   Dialog,
   DialogContent,
@@ -51,12 +51,12 @@ export function JamDialog({ children, open, onOpenChange, activeItem }: JamDialo
 
             {activeItem.duration && (
               <p className="uppercase tracking-wide text-md font-regular">
-                {activeItem.duration}
+                {activeItem.duration.toUpperCase()}
               </p>
             )}
 
             {activeItem.description && (
-              <p className="max-w-3xl text-sm sm:text-base leading-relaxed text-white/90">
+              <p className="max-w-3xl text-sm font-normal leading-relaxed text-white/90">
                 {activeItem.description}
               </p>
             )}
@@ -65,19 +65,28 @@ export function JamDialog({ children, open, onOpenChange, activeItem }: JamDialo
           {activeItem.details && activeItem.details.length > 0 && (
             <section className="space-y-2">
               <h2 className="uppercase tracking-wide text-xl font-semibold">
-                Detalhes
+                MODELO DE FUNCIONAMENTO
               </h2>
 
               <div className="">
-                {activeItem.details.map((detail, index) => (
-                  <div key={index} className="py-2">
-                    <p className="text-lg font-semibold">Titulo</p>
-                    <p className="text-sm leading-relaxed text-white/90">
-                      {detail}
-                    </p>
-                    <Separator className="mt-3 bg-white/40" />
-                  </div>
-                ))}
+                {activeItem.details.map((detail, index) => {
+                  const isObj = typeof detail === "object" && detail !== null;
+                  const item = (detail as JamDetail);
+                  const title = isObj ? item.title : undefined;
+                  const description = isObj ? item.description : (detail as string);
+                  const isLast = index === activeItem.details!.length - 1;
+                  return (
+                    <div key={index} className="py-2">
+                      {title && (
+                        <p className="text-lg font-semibold">{title}</p>
+                      )}
+                      <p className="text-sm leading-relaxed text-white/90">
+                        {description}
+                      </p>
+                      {!isLast && <Separator className="mt-3 bg-white/40" />}
+                    </div>
+                  );
+                })}
               </div>
             </section>
           )}
