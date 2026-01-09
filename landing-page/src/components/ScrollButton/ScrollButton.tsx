@@ -35,15 +35,15 @@ export const ScrollButton = (): JSX.Element => {
       variant="ghost"
       size="icon"
       onClick={handleClick}
-      className="fixed right-32 bottom-32 w-20 h-20 p-0 hover:bg-transparent hover:scale-110 transition-all duration-300"
+      className="fixed bg-white rounded-full right-32 bottom-32 size-28 p-0 hover:scale-110 transition-all duration-300"
       style={{
         transform: isAtBottom ? 'translateY(-8px)' : 'translateY(8px)'
       }}
     >
       {isAtBottom ? (
-        <ChevronUp className="w-full h-full text-foreground" strokeWidth={1} />
+        <ChevronUp className="w-36 h-36 text-black" size={28} strokeWidth={1} />
       ) : (
-        <ChevronDown className="w-full h-full text-foreground" strokeWidth={1} />
+        <ChevronDown className="w-36 h-36 text-black" size={28} strokeWidth={1} />
       )}
     </Button>
   );
