@@ -9,6 +9,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@leenguyen/react-flip-clock-countdown": "^1.7.2",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-slot": "^1.1.0",
     "@react-three/drei": "^9.122.0",
@@ -22,7 +23,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
     "tailwind-merge": "2.5.4",
-    "tailwindcss-pwcte": "1.0.7",
+    "tailwindcss-animate": "1.0.7",
     "three": "^0.160.1"
   },
   "devDependencies": {

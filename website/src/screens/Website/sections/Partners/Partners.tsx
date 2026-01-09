@@ -29,8 +29,8 @@ const partnerLogos = [
 
 export const Partners = (): JSX.Element => {
   return (
-    <section className="relative bg-black py-24 px-4">
-      <div className="mx-auto  ">
+    <section className="relative bg-black pt-24 px-4">
+      <div className="mx-auto">
         {/* Divider */}
         <Separator className="mb-12 bg-white" />
 

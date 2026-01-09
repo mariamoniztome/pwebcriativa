@@ -1,0 +1,17 @@
+.flip-clock {
+    --fcc-flip-duration: 0.5s;
+    /* transition duration when flip card */
+    --fcc-label-color: #ffffff;
+    /* color of label */
+    --fcc-background: black;
+    
+    /* background of digit card */
+    --fcc-separator-size: 6px;
+    /* size of colon */
+    --fcc-separator-color: white;
+    /* color of colon */
+}
+
+.flip-clock .fcc__digit_block {
+  overflow: visible;
+}

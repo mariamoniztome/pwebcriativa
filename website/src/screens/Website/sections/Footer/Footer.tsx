@@ -15,7 +15,7 @@ export const Footer = (): JSX.Element => {
   ];
 
   return (
-    <footer className="relative bg-black pt-24 pb-4">
+    <footer className="relative bg-black pb-4">
       <div className="mx-auto px-6">
         {/* Top section */}
         <div className="mx-auto flex flex-col md:gap-10 lg:gap-80 lg:flex-row lg:items-center">
@@ -113,7 +113,7 @@ export const Footer = (): JSX.Element => {
         </div>
 
         {/* Big slogan */}
-        <div className="mt-24 flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
           <h2 className="text-[clamp(3rem,10vw,10rem)] font-bold leading-none text-white">
             DON&apos;T BE <span className="italic">MAD</span>
           </h2>
