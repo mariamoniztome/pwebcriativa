@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { ArrowDown, ArrowUp } from "lucide-react";
 import { Button } from "../ui/button";
 
 export const ScrollButton = (): JSX.Element => {
@@ -41,9 +41,9 @@ export const ScrollButton = (): JSX.Element => {
       }}
     >
       {isAtBottom ? (
-        <ChevronUp className="w-36 h-36 text-black" size={28} strokeWidth={1} />
+        <ArrowUp className="!size-[6rem] text-black" strokeWidth={1} />
       ) : (
-        <ChevronDown className="w-36 h-36 text-black" size={28} strokeWidth={1} />
+        <ArrowDown  className="!size-[6rem] text-black" strokeWidth={1} />
       )}
     </Button>
   );
