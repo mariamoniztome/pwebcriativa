@@ -13,14 +13,6 @@ type EditionDialogProps = {
 };
 
 export function EditionDialog({ edition, onClose }: EditionDialogProps) {
-  const galleryLayout = [
-    "col-span-12 md:col-span-5 lg:col-span-4",
-    "col-span-12 md:col-span-4 lg:col-span-3",
-    "col-span-12 md:col-span-3 lg:col-span-3",
-    "col-span-12 md:col-span-6 lg:col-span-4",
-    "col-span-12 md:col-span-6 lg:col-span-5",
-  ];
-
   return (
     <Dialog
       open={!!edition}
@@ -47,21 +39,26 @@ export function EditionDialog({ edition, onClose }: EditionDialogProps) {
             </DialogHeader>
             <Separator className="mt-3 bg-white/40" />
             {edition.gallery && edition.gallery.length > 0 && (
-              <div className="grid grid-cols-12 auto-rows-[160px] gap-4">
-                {edition.gallery.map((img, index) => (
-                  <div
-                    key={index}
-                    className={`relative overflow-hidden rounded-md bg-black/40 ${
-                      galleryLayout[index] ?? "col-span-12 sm:col-span-6"
-                    }`}
-                  >
-                    <img
-                      src={img}
-                      alt={`Edição ${edition.year} ${index + 1}`}
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                  </div>
-                ))}
+              <div className="grid grid-cols-4 grid-rows-2 gap-4">
+                {[0, 1, null, 2, null, 3, 4, null].map((slot, slotIndex) => {
+                  const img = slot !== null ? edition.gallery?.[slot] : null;
+                  return (
+                    <div
+                      key={slotIndex}
+                      className={`relative overflow-hidden aspect-[4/3] ${
+                        img ? "bg-black/40" : "bg-transparent"
+                      }`}
+                    >
+                      {img && (
+                        <img
+                          src={img}
+                          alt={`Edição ${edition.year} ${slot !== null ? slot + 1 : ""}`}
+                          className="absolute inset-0 h-full w-full object-cover"
+                        />
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             )}
 
