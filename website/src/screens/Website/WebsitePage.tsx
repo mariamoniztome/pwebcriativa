@@ -8,6 +8,7 @@ import { Footer } from "./sections/Footer";
 import { FestivalIntroSection } from "./sections/FestivalIntroSection";
 import { PastEditionsSection } from "./sections/PastEditionsSection";
 import { JamsGallerySection } from "./sections/JamsSection";
+import { ScrollButton } from "./components/ScrollButton/ScrollButton";
 
 export const WebsitePage = (): JSX.Element => {
   return (
@@ -23,6 +24,7 @@ export const WebsitePage = (): JSX.Element => {
         <FaqsSection />
         <Partners />
         <Footer />
+        <ScrollButton />
       </main>
       <div
         aria-hidden
